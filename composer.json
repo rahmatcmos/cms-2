@@ -52,10 +52,5 @@
         "post-update-cmd": [
             "php artisan optimize"
         ]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     }
 }
