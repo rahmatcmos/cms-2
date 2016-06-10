@@ -1,0 +1,18 @@
+.custom_nav{
+	padding: 20px 0;
+}
+
+
+/*our goal part*/
+.goal_tit{
+	font-size: 35px;
+	line-height: 30px;
+}
+.goal_txt{
+	font-size: 15px;
+	line-height: 30px;
+}
+.goal-wrap{
+	padding: 150px 50px;
+
+}
