@@ -1,19 +1,31 @@
 #Beyond Plus CMS
 Beyond Plus CMS is Content Managment System based on Laravel Framework. It support to create websites quickly.
 
-##To Do
 
-----------------------
 
-##Front
+##Usage
+* siteurl.com/bp-admin
 
-* Redesign Front Theme 
 
-##Backend
 
-* Menu
-* 
+##Credits
+* Laravel 5.2
+* Bootstrap Framework
+* SCSS
+* font-awesome
+* bxslider
+* Jquery
+* Bxslider
+* laravelcollective/html
+* fzaninotto/faker
+* mockery/mockery
+* phpunit/phpunit
+* symfony/css-selector
+* symfony/dom-crawler
 
-#Notice
-Beyond Plus CMS support to create website quickly. We didn't permission that our source code's variable or method modifying.
-Developer can add or write code on framework.
+##Installation
+
+## At Composer
+
+* composer create-project --prefer-dist beyondplus/cms cms
+
