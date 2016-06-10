@@ -2,7 +2,7 @@
     "name": "beyondplus/cms",
     "description": "Beyond Plus CMS",
     "version": "1.0.0",
-    "keywords": ["framework","Beyond Plus CMS","laravel"],
+    "keywords": ["framework","Beyond Plus CMS","laravel 5.2 based "],
     "license": "MIT",
     "type": "project",
     "repositories": [
@@ -61,5 +61,6 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "minimum-stability": "dev"
 }
