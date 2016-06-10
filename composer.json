@@ -5,12 +5,6 @@
     "keywords": ["framework","Beyond Plus CMS","laravel 5.2 based "],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://https://github.com/BeyondPlusTrainingCentre/cms.git"
-        }
-    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
@@ -62,5 +56,6 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
