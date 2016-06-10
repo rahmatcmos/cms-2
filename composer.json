@@ -1,6 +1,7 @@
 {
     "name": "beyondplus/cms",
     "description": "Beyond Plus CMS",
+    "version": "1.0.0",
     "keywords": ["framework","Beyond Plus CMS","laravel"],
     "license": "MIT",
     "type": "project",
