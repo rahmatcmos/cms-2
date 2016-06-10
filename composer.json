@@ -7,7 +7,6 @@
     "type": "project",
     "beyondplus/cms": "dev-master",
     "require": {
-        "beyondplus/cms": "1.0.*",
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*"
@@ -56,6 +55,7 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        //"preferred-install": "dist"
+        "preferred-install": "stable"
     }
 }
