@@ -4,7 +4,7 @@
     "keywords": ["framework","Beyond Plus CMS","laravel 5.2 based "],
     "license": "MIT",
     "type": "project",
-    "minimum-stability": "1.0.0",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
@@ -52,5 +52,10 @@
         "post-update-cmd": [
             "php artisan optimize"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
     }
 }
