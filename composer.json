@@ -4,6 +4,7 @@
     "keywords": ["framework","Beyond Plus CMS","laravel"],
     "license": "MIT",
     "type": "project",
+    "preferred-install": "stable",
     "require": {
         "beyondplus/cms": "1.0.*",
         "php": ">=5.5.9",
