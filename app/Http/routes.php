@@ -8,9 +8,9 @@
  */
 
 Route::any('/password/reset','Front\FrontController@index');
-Route::group(['prefix' => 'api/v1','namespace'  => 'Api\Ver1', 'middleware' => 'auth:api'], function () {
-    Route::resource('posts', 'Posts');
-});
+// Route::group(['prefix' => 'api/v1','namespace'  => 'Api\Ver1', 'middleware' => 'auth:api'], function () {
+//     Route::resource('posts', 'Posts');
+// });
 
 
 Route::group(['middleware' => 'web'], function () {
@@ -23,7 +23,7 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::group(['prefix' => 'bp-admin','namespace'  => 'BpAdmin', 'middleware' => 'admins'], function () {
-   // Route::any('/register','Front\FrontController@index');
+   
     Route::get('/', 'AdminController@index');
     Route::get('logout','Main@logout');
 
@@ -33,42 +33,21 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('page', 'PageController');
     Route::get('page/delete/{id}','PageController@destroy');
     
-    Route::get('user', 'UserController@index');
-    Route::get('user/add', 'UserController@create');
-    Route::post('user/add', 'UserController@store');
-    Route::get('user/{id}','UserController@edit');
-    Route::put('user/{id}', 'UserController@update');
+    Route::resource('user', 'UserController');
     Route::get('user/delete/{id}', 'UserController@destroy');
 
-    Route::get('media', 'MediaController@index');
-    Route::get('media/add', 'MediaController@create');
-    Route::post('media/add', 'MediaController@store');
-    Route::get('media/{id}', 'MediaController@edit');
-    Route::put('media/{id}','MediaController@update');
+    Route::resource('media', 'MediaController');
     Route::get('media/delete/{id}','MediaController@destroy');
 
-    Route::get('slider', 'SliderController@index');
-    Route::get('slider/add', 'SliderController@create');
-    Route::post('slider/add', 'SliderController@store');
-    Route::get('slider/{id}', 'SliderController@edit');
-    Route::put('slider/{id}','SliderController@update');
+    Route::resource('slider', 'SliderController');
     Route::get('slider/delete/{id}','SliderController@destroy');
 
-    Route::get('menu', 'MenuController@index');
-    Route::get('menu/add', 'MenuController@create');
-    Route::post('menu/add', 'MenuController@store');
-    Route::get('menu/{id}', 'MenuController@edit');
-    Route::put('menu/{id}','MenuController@update');
+    Route::resource('menu', 'MenuController');
     Route::get('menu/delete/{id}','MenuController@destroy');
     Route::post('menu/pagestore', 'MenuController@pageStore');
     Route::post('menu/poststore', 'MenuController@postStore');
     
-
-    Route::get('category', 'CategoryController@index');
-    Route::get('category/add', 'CategoryController@create');
-    Route::post('category/add', 'CategoryController@store');
-    Route::get('category/{id}', 'CategoryController@edit');
-    Route::put('category/{id}','CategoryController@update');
+    Route::resource('category', 'CategoryController');
     Route::get('category/delete/{id}','CategoryController@destroy');
 
     Route::get('tax', 'TaxController@index');
@@ -83,11 +62,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('generals/add', 'SettingsController@generaledit');
 
 
-    Route::get('account', 'AccountController@index');
-    Route::get('account/add', 'AccountController@create');
-    Route::post('account/add', 'AccountController@store');
-    Route::get('account/{id}','AccountController@edit');
-    Route::put('account/{id}', 'AccountController@update');
+    Route::resource('account', 'AccountController');
     Route::get('account/delete/{id}', 'AccountController@destroy');
 
 
@@ -100,9 +75,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/test', function(){
        return abort(404);
     });
-
-// index.php -> create ထည့္, edit ထည့္
-// add.php -> add  ျဖဳတ္
     
 });
 

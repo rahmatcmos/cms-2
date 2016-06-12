@@ -18,9 +18,9 @@ class PostTableSeeder extends Seeder
 
         for ($i=0; $i < 10; $i++) {
             $Bp_post = [
-                'title'         => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
+                'title'         => $post = $this->faker->sentence($nbWords = 6, $variableNbWords = true),
                 'body'          => $this->faker->text,
-                'post_link'     => str_replace(' ', '-', $this->faker->sentence($nbWords = 6, $variableNbWords = true)),
+                'post_link'     => str_replace(' ', '-', strtolower($post)),
                 'post_type'     => 'post',
                 'created_at'    => '2016-06-3 00:36:29'
 
@@ -30,9 +30,9 @@ class PostTableSeeder extends Seeder
 
         for ($y=0; $y < 5; $y++) {
             $Bp_post = [
-                'title'         => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
+                'title'         => $page = $this->faker->sentence($nbWords = 6, $variableNbWords = true),
                 'body'          => $this->faker->text,
-                'post_link'     => str_replace(' ', '-', $this->faker->sentence($nbWords = 6, $variableNbWords = true)),
+                'post_link'     => str_replace(' ', '-', strtolower($page)),
                 'post_type'     => 'page',
                 'created_at'    => '2016-06-3 00:36:29'
             ];

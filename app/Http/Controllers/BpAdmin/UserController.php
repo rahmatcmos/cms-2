@@ -27,15 +27,12 @@ class UserController extends Controller
      public function index(){
         $user = User::orderBy('id', 'DESC')
             ->groupBy('users.id')
-            ->get();
-        
-        return view('bp-admin.user.index')->with(compact('user'));
+            ->get();        
+        return view('bp-admin.user.index',array('user' => $user ));
     }
   
     public function create(){
-
-
-        $user= User::lists('name','id');
+      //  $user= User::lists('name','id');
         //$brand= Brand::lists('brand_name','id');
         //return view('dashboard.create')->with('category',$categories);
         $user = User::orderBy('id', 'DESC')->get();
@@ -72,7 +69,7 @@ class UserController extends Controller
     {
         $inputs = $request->all();
      //   $inputs = $request->except('_token', '_method');
-
+        $inputs['password'] = bcrypt($request->input('password'));
         User::findOrFail($id)->update($inputs);
         return redirect()->to('bp-admin/user');//return view
     }

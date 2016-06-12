@@ -23,7 +23,7 @@ class MenuController extends Controller
     public function __construct()
     {
        $this->middleware('admins');
-       $this->menu = Bp_menu::orderBy('menu_id', 'desc')->get();
+       $this->menu = Bp_menu::where('parent_id','>',0)->orderBy('menu_id', 'desc')->get();
        $this->pages=  Bp_post::where('post_type', '=' ,'page')->orderBy('id', 'desc')->get();
        $this->posts=  Bp_post::where('post_type', '=' ,'post')->orderBy('id', 'desc')->get();
     }
@@ -92,8 +92,8 @@ class MenuController extends Controller
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return 'Category Not Found';
         }
-        $categories= Bp_menu::lists('menu_name','menu_id');
-        return view('bp-admin.menu.edit', array('menu' => $menu));
+        $menus= Bp_menu::lists('menu_name','menu_id');
+        return view('bp-admin.menu.edit', array('menu' => $menu, 'menus'=> $menus));
         
     }
 
@@ -105,7 +105,7 @@ class MenuController extends Controller
         if ($request->file('menu_icon') && $request->file('category_icon')->isValid()) {
             $destinationPath = uploadPath();
             $extension = $request->file('category_icon')->getClientOriginalExtension(); // getting image extension
-            $fileName = 'catmk'.md5(microtime().rand()).'.'.$extension; // renameing image
+            $fileName = 'menumk'.md5(microtime().rand()).'.'.$extension; // renameing image
             $request->file('menu_icon')->move($destinationPath, $fileName); // uploading file to given path
             $inputs['menu_icon'] = $fileName;
         }

@@ -18,10 +18,11 @@ class UserTableSeeder extends Seeder
         User::truncate();
         $this->faker = \Faker\Factory::create();
         Admin::create([
-            'username' => 'San Pwint Thu',
-        	'email' => 'root@email.com',
-        	'password' => Hash::make('root'),
-            'api_token'   => 'r27bHi9jwClte3W8MypKXXqpMCvIRZErVOttKsz9SNf14xKwtK6J1rjWE9Zc'
+            'username'     => 'San Pwint Thu',
+        	'email'        => 'root@email.com',
+        	'password'     => Hash::make('root'),
+            'api_token'    => 'r27bHi9jwClte3W8MypKXXqpMCvIRZErVOttKsz9SNf14xKwtK6J1rjWE9Zc',
+            'created_at'   => '2016-06-3 00:36:29'
         ]);
 
 

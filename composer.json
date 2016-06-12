@@ -1,7 +1,7 @@
 {
     "name": "beyondplus/cms",
     "description": "Beyond Plus CMS",
-    "keywords": ["framework","Beyond Plus CMS","laravel 5.2 based "],
+    "keywords": ["Myanmar CMS","Beyond Plus CMS"],
     "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
