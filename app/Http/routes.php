@@ -12,7 +12,6 @@ Route::any('/password/reset','Front\FrontController@index');
 //     Route::resource('posts', 'Posts');
 // });
 
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
