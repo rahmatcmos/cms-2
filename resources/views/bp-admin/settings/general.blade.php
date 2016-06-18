@@ -39,7 +39,7 @@
                         @foreach ($options as $c)
                         <tr>
                             <td>{{$c->option_name}}</td>
-                            <td>{!!Form::text($c->option_name, $c->option_value,['class'=>'form-control'])!!}</td>
+                            <td>{{Form::text($c->option_name, $c->option_value,['class'=>'form-control'])}}</td>
                            
                         </tr>
                         @endforeach

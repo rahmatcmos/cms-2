@@ -1,14 +1,14 @@
 <?php
 
-namespace Beyondplus\Http\Controllers\Api\Ver1;
+namespace App\Http\Controllers\Api\Ver1;
 
 use Illuminate\Http\Request;
 
-use Beyondplus\Http\Requests;
-use Beyondplus\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use DB;
 use Auth;
-use Beyondplus\User;
+use App\User;
 
 class Posts extends Controller
 {

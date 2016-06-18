@@ -18,11 +18,12 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-5">
-                            {!!Form::open([
-                                'url' => 'bp-admin/account/add',
+
+                            {{ Form::open([
+                                'url' => 'bp-admin/account',
                                 'method' => 'post',
                                 'files' => 'true',
-                                ])!!}
+                                ]) }}
                           
                             @if ($errors->has())
                                 <div class="alert alert-danger">
@@ -36,21 +37,21 @@
                                                         
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('username', null,['class'=>'form-control'])!!}
+                                {{ Form::text('username', null,['class'=>'form-control']) }}
                             </div>
                             <!-- <div class="form-group">
                                 <label class="control-label">Picture</label>
-                                {!! Form::file('pictures',null,array('class'=>'form-control')) !!}
+                                {{ Form::file('pictures',null,array('class'=>'form-control')) }}
                             </div> -->
 
                             <div class="form-group">
                                 <label class="control-label">Email</label>
-                                {!!Form::text('email', null,['class'=>'form-control'])!!}
+                                {{ Form::text('email', null,['class'=>'form-control']) }}
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label">New Password</label>
-                                {!!Form::text('password', null,['class'=>'form-control'])!!}
+                                {{ Form::password('password',['class'=>'form-control']) }}
                                
                             </div>
 

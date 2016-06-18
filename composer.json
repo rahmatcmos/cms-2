@@ -9,8 +9,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "laravelcollective/html": "5.2.*"
-        
+        "laravelcollective/html": "5.2.*",
+        "beyondplus/cmslibrary": "^1.0"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -20,12 +21,12 @@
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },
     "autoload": {
-        
+
         "classmap": [
             "database"
         ],
         "psr-4": {
-            "Beyondplus\\": "app/"
+            "App\\": "app/"
         },
         "files" : [
             "app/Helpers/helpers.php"

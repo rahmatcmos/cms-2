@@ -18,11 +18,11 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-5">
-                            {!!Form::open([
-                                'url' => 'bp-admin/category/add',
+                            {{Form::open([
+                                'url' => 'bp-admin/category',
                                 'method' => 'post',
                                 'files' => 'true',
-                                ])!!}
+                                ])}}
                           
                             @if ($errors->has())
                                 <div class="alert alert-danger">
@@ -35,17 +35,17 @@
                             
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('category_name', null,['class'=>'form-control'])!!}
+                                {{Form::text('category_name', null,['class'=>'form-control'])}}
                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Image</label>
-                                {!! Form::file('category_icon',null,array('class'=>'form-control')) !!}
-                                {!! Form::hidden('category_icon',null,array('class'=>'form-control')) !!}
+                                {{ Form::file('category_icon',null,array('class'=>'form-control')) }}
+                                {{ Form::hidden('category_icon',null,array('class'=>'form-control')) }}
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Parent Name</label>
-                               {!! Form::select('parent_id',$categories,null, array('class' => 'form-control', 'placeholder' => 'Choose Parent ...'))!!}
+                               {{ Form::select('parent_id',$categories,null, array('class' => 'form-control', 'placeholder' => 'Choose Parent ...'))}}
                             </div> 
 
 
@@ -58,10 +58,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Active</label>
-                                {!!Form::select('category_active', [
+                                {{Form::select('category_active', [
                                     'yes' => 'Yes',
                                     'no' => 'No',
-                                ],  null, ['class'=> 'form-control'])!!}
+                                ],  null, ['class'=> 'form-control'])}}
                             </div>
                        
                             <div class="">

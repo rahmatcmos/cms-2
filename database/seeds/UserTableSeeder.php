@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Beyondplus\Admin;
-use Beyondplus\User;
+use App\Admin;
+use App\User;
 
 class UserTableSeeder extends Seeder
 {

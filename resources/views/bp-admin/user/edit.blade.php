@@ -17,11 +17,11 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-5">
-                            {!!Form::model($user, [
+                            {{Form::model($user, [
                                 'url' => ['bp-admin/user', $user->id],
                                 'method' => 'put',
                                 'files' => 'true'
-                                ])!!}
+                                ])}}
                                 
                             @if ($errors->has())
                                 <div class="alert alert-danger">
@@ -33,16 +33,21 @@
                             {{--  --}}
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('name', null,['class'=>'form-control'])!!}
+                                {{Form::text('name', null,['class'=>'form-control'])}}
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Email</label>
-                                {!! Form::text('email',null,array('class'=>'form-control')) !!}
+                                {{ Form::text('email',null,array('class'=>'form-control')) }}
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Password</label>
+                                {{ Form::password('password',['class'=>'form-control']) }}
+                            </div>
+                            
                             <div>
                                 <button type="submit" class="pull-right btn btn-success">Update</button>
                             </div>
-                            {!!Form::close()!!}
+                            {{Form::close()}}
                             {{--  --}}
                         </div>{{-- end of form wrapper div --}}
                     </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyondplus\Events;
+namespace App\Events;
 
 abstract class Event
 {

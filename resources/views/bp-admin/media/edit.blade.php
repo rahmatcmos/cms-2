@@ -18,11 +18,11 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-7">
-                            {!!Form::model($media, [
+                            {{Form::model($media, [
                                 'url' => ['bp-admin/media', $media->media_id],
                                 'method' => 'put',
                                 'files' => 'true'
-                                ])!!}
+                                ])}}
                             @if ($errors->has())
                                 <div class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -33,22 +33,22 @@
                             {{--  --}}
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('media_name', null,['class'=>'form-control'])!!}
+                                {{Form::text('media_name', null,['class'=>'form-control'])}}
                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Image</label>
-                                {!! Form::file('media_link',null,array('class'=>'form-control')) !!}
-                                {!! Form::hidden('media_link',null,array('class'=>'form-control')) !!}
+                                {{ Form::file('media_link',null,array('class'=>'form-control')) }}
+                                {{ Form::hidden('media_link',null,array('class'=>'form-control')) }}
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                {!! Form::textarea('media_description', null, ['class'=>'form-control']) !!}
+                                {{ Form::textarea('media_description', null, ['class'=>'form-control']) }}
                                
                             </div> 
                             <div class="form-group">
                                 <label class="control-label">Weight</label>
-                                {!!Form::text('weight', null,['class'=>'form-control'])!!}
+                                {{Form::text('weight', null,['class'=>'form-control'])}}
                                
                             </div>
                             <div class="form-group">
@@ -62,7 +62,7 @@
                             <div>
                                 <button type="submit" class="pull-right btn btn-success">Update</button>
                             </div>
-                            {!!Form::close()!!}
+                            {{Form::close()}}
                             {{--  --}}
                         </div>{{-- end of form wrapper div --}}
                     </div>

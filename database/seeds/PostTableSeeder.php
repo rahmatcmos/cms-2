@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Beyondplus\Models\Bp_post;
+use App\Models\Bp_post;
 
 class PostTableSeeder extends Seeder
 {

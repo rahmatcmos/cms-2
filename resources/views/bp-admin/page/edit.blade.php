@@ -1,7 +1,7 @@
 
 @extends('bp-admin.layouts.admin.index')
 
-@section('title', 'Post')
+@section('title', 'Page')
 
 @section('content')
   <div class="row">
@@ -18,11 +18,11 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-7">
-                            {!!Form::model($page, [
+                            {{ Form::model($page, [
                                 'url' => ['bp-admin/page', $page->id],
                                 'method' => 'put',
                                 'files' => 'true'
-                                ])!!}
+                                ]) }}
                             @if ($errors->has())
                                 <div class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -33,17 +33,17 @@
                             {{--  --}}
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('title', null,['class'=>'form-control'])!!}
+                                {{ Form::text('title', null,['class'=>'form-control']) }}
                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
+                                {{  Form::textarea('body', null, ['class'=>'form-control'])  }}
                                
                             </div> 
                             <div class="form-group">
                                 <label class="control-label">Weight</label>
-                                {!!Form::text('post_weight', null,['class'=>'form-control'])!!}
+                                {{ Form::text('post_weight', null,['class'=>'form-control']) }}
                                
                             </div>
                             <div class="form-group">
@@ -57,7 +57,7 @@
                             <div>
                                 <button type="submit" class="pull-right btn btn-success">Update</button>
                             </div>
-                            {!!Form::close()!!}
+                            {{ Form::close() }}
                             {{--  --}}
                         </div>{{-- end of form wrapper div --}}
                     </div>

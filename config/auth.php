@@ -74,11 +74,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Beyondplus\User::class,
+            'model' => App\User::class,
         ],
         'admins' => [
              'driver' => 'eloquent',
-             'model' => Beyondplus\Admin::class,
+             'model' => App\Admin::class,
          ],
         // 'users' => [
         //     'driver' => 'database',

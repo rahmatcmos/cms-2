@@ -1,7 +1,7 @@
 <?php
-namespace Beyondplus\Http\Requests;
+namespace App\Http\Requests;
 
-use Beyondplus\Http\Requests\Request;
+use App\Http\Requests\Request;
 
 class PriorityRequest extends Request {
 

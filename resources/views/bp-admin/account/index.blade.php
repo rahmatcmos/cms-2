@@ -11,17 +11,17 @@
                         <div class="col-sm-5">
                             
                             <div class="form-group">
-                             {!! Form::open([
+                             {{ Form::open([
                                 'method' => 'get'
-                                ]) !!}
+                                ]) }}
                               <input type="text" name="search"   class="form-control" placeholder="Search" value="{{\Request::get('search')}}">
-                             {!! Form::close() !!}
+                             {{ Form::close() }}
                             </div>
                         </div>
                         <div class="col-sm-3 pull-right">
                              
 
-                            <a href="{{ url('bp-admin/account/add') }}" class="btn btn-success  pull-right">
+                            <a href="{{ url('bp-admin/account/create') }}" class="btn btn-success  pull-right">
                                 <i class="fa fa-user-plus"></i>
                                 New
                             </a>
@@ -51,7 +51,7 @@
                             <td>
         
                                 <div style="float:right">
-                                <a href="{{ url('bp-admin/account' ,[$adminaccount->id]) }}" class="btn btn-xs btn-info">Edit</a>
+                                <a href="{{ url('bp-admin/account/'.$adminaccount->id.'/edit') }}" class="btn btn-xs btn-info">Edit</a>
                                 
                                 <a href="{{ url('bp-admin/account/delete',[$adminaccount->id]) }}" class="btn btn-delete btn-xs btn-danger">Remove</a>
                                 </div>

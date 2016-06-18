@@ -1,10 +1,10 @@
 <?php
 
-namespace Beyondplus\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Beyondplus\User;
+use App\User;
 use Validator;
-use Beyondplus\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

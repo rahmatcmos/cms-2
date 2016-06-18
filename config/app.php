@@ -147,15 +147,15 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+       BeyondPlus\CmsLibrary\CMSServiceProvider::class,
 
-        
         /*
          * Application Service Providers...
          */
-        Beyondplus\Providers\AppServiceProvider::class,
-        Beyondplus\Providers\AuthServiceProvider::class,
-        Beyondplus\Providers\EventServiceProvider::class,
-        Beyondplus\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
     ],
 

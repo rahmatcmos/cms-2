@@ -49,7 +49,14 @@
                   <h3 class="box-title">Latest Members</h3>
 
                   <div class="box-tools pull-right">
-                    <span class="label label-danger">8 New Members</span>
+
+                    {{-- @foreach ($allUser as $userAll) --}}
+                      {{-- expr --}}
+
+                    <span class="label label-danger"> {{ $allUser }} New Admin </span>
+
+                {{--       @endforeach --}}
+
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
@@ -58,12 +65,16 @@
                   </div>
                   <div class="box-body no-padding">
                   <ul class="users-list clearfix">
+                    
+                  @foreach($latestUser as $latestUsers )
                     <li>
                       <img src="{{ url('/img/avatar2.png')}}" alt="User Image">
-                      <a class="users-list-name" href="#">Alexander Pierce</a>
+                      <a class="users-list-name" href="#">  {{ $latestUsers->name }} </a>
                       <span class="users-list-date">Today</span>
                     </li>
-                    <li>
+                  @endforeach
+
+                    <!-- <li>
                       <img src="{{ url('/img/avatar.png')}}" alt="User Image">
                       <a class="users-list-name" href="#">Norman</a>
                       <span class="users-list-date">Yesterday</span>
@@ -97,7 +108,7 @@
                       <img src="{{ url('/img/avatar2.png')}}" alt="User Image">
                       <a class="users-list-name" href="#">Nadia</a>
                       <span class="users-list-date">15 Jan</span>
-                    </li>
+                    </li> -->
                   </ul>
                   <!-- /.users-list -->
                 </div>

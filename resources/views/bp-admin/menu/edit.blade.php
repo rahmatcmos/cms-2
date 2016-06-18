@@ -18,11 +18,11 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-5">
-                            {!!Form::model($menu, [
+                            {{ Form::model($menu, [
                                 'url' => ['bp-admin/menu', $menu->menu_id],
                                 'method' => 'put',
                                 'files' => 'true'
-                                ])!!}
+                                ]) }}
                             @if ($errors->has())
                                 <div class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -33,7 +33,7 @@
                             {{--  --}}
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('menu_name', null,['class'=>'form-control'])!!}
+                                {{ Form::text('menu_name', null,['class'=>'form-control']) }}
                             </div>
                         <!--     <div class="form-group">
                                 <label class="control-label">Image</label>
@@ -41,19 +41,25 @@
                                 {!! Form::hidden('menu_icon',null,array('class'=>'form-control')) !!}
                             </div>
                         -->
+                            <div class="form-group">
+                                <label class="control-label">Parent Name</label>
+                                 
+                                     {{ Form::select('parent_id',$menus,null,['class'=>'form-control']) }}
+                                   
+                            </div> 
                             
                             <div class="form-group">
                                 <label class="control-label">Active</label>
-                                {!!Form::select('menu_active', [
+                                {{ Form::select('menu_active', [
                                     'yes' => 'Yes',
                                     'no' => 'No',
-                                ],  null, ['class'=> 'form-control'])!!}
+                                ],  null, ['class'=> 'form-control']) }}
                             </div>
                           
                             <div>
                                 <button type="submit" class="pull-right btn btn-success">Update</button>
                             </div>
-                            {!!Form::close()!!}
+                            {{ Form::close() }}
                             {{--  --}}
                         </div>{{-- end of form wrapper div --}}
                     </div>

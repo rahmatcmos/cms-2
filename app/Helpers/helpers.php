@@ -55,7 +55,7 @@ if (!function_exists('backend_url')) {
 
 if (!function_exists('dataPaginator')) {
     function dataPaginator($paginator, $pullRight) {
-        return (new \Beyondplus\Paginators\DataTable($paginator))->render($pullRight);
+        return (new \App\Paginators\DataTable($paginator))->render($pullRight);
     }
 }
 
@@ -88,7 +88,7 @@ function profile_pic_path($filename = '') {
 
 function languages()
 {
-    $lang = Beyondplus\Models\Language::get()->toArray();
+    $lang = App\Models\Language::get()->toArray();
     $languages = [];
     foreach ($lang as $value) {
         $languages[$value['code']] = $value['name'];
@@ -98,7 +98,7 @@ function languages()
 
 function cities()
 {
-    $city = Beyondplus\Models\City::get()->toArray();
+    $city = App\Models\City::get()->toArray();
     $cities = [];
     foreach ($city as $value) {
         $cities[$value['id']] = $value['name'];
@@ -108,7 +108,7 @@ function cities()
 
 function townships()
 {
-    $township = Beyondplus\Models\Township::get()->toArray();
+    $township = App\Models\Township::get()->toArray();
     $townships = [];
     foreach ($township as $value) {
         $townships[$value['id']] = $value['name'];
@@ -118,7 +118,7 @@ function townships()
 
 function wards()
 {
-    $ward = Beyondplus\Models\Ward::get()->toArray();
+    $ward = App\Models\Ward::get()->toArray();
     $wards = [];
     foreach ($ward as $value) {
         $wards[$value['id']] = $value['name'];
@@ -128,7 +128,7 @@ function wards()
 
 function categories()
 {
-    $category = Beyondplus\Models\Category::get()->toArray();
+    $category = App\Models\Category::get()->toArray();
     $categorys = [];
     foreach ($category as $value) {
         $categorys[$value['id']] = $value['name'];
@@ -138,7 +138,7 @@ function categories()
 
 function taxonomy()
 {
-    $taxonomy = Beyondplus\Models\Taxonomy::get()->toArray();
+    $taxonomy = App\Models\Taxonomy::get()->toArray();
     $taxonomys = [];
     foreach ($taxonomy as $value) {
         $taxonomys[$value['id']] = $value['name'];
@@ -148,7 +148,7 @@ function taxonomy()
 
 function packages()
 {
-    $pk = Beyondplus\Models\Package::get()->toArray();
+    $pk = App\Models\Package::get()->toArray();
     $pks = [];
     foreach ($pk as $value) {
         $pks[$value['id']] = $value['name'];
@@ -158,7 +158,7 @@ function packages()
 
 function defaultCity()
 {
-    $city = Beyondplus\Models\City::where('name', 'Yangon')->first();
+    $city = App\Models\City::where('name', 'Yangon')->first();
     if (!$city) {
         return null;
     }
@@ -170,7 +170,7 @@ function uploadPath($tail = '/') {
 }
 
 function parseCsv($path) {
-    return \Beyondplus\Libs\Convector\Csv2Array::convert($path);
+    return \App\Libs\Convector\Csv2Array::convert($path);
 }
 
 function input($input, $default = null) {

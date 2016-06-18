@@ -4,11 +4,11 @@
 
 @section('content')
  <div class="row">
-    {!!Form::open([
+    {{Form::open([
             'url' => 'bp-admin/post',
             'method' => 'post',
             'files' => 'true',
-            ])!!}
+            ])}}
         <div class="col-md-9">
             <div class="box box-danger">
                 <div class="box-header">
@@ -21,7 +21,7 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-sm-7">
+                        <div class="col-sm-10">
                             
                           
                             @if ($errors->has())
@@ -35,18 +35,18 @@
                             
                             <div class="form-group">
                                 <label class="control-label">Name</label>
-                                {!!Form::text('title', null,['class'=>'form-control'])!!}
+                                {{Form::text('title', null,['class'=>'form-control'])}}
                                
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
+                                {{ Form::textarea('body', null, ['class'=>'form-control']) }}
                                
                             </div> 
                         
                             <div class="form-group">
                                 <label class="control-label">Weight</label>
-                                {!!Form::text('post_weight', 0,['class'=>'form-control'])!!}
+                                {{Form::text('post_weight', 0,['class'=>'form-control'])}}
                                
                             </div>
                             <div class="form-group">
@@ -75,7 +75,7 @@
             <div class="box box-danger">
                 <div class="box-body">
                     <div class="col-md-12 form-group scrollbar">
-                        {!! Form::label('Categories') !!}<br />
+                        {{ Form::label('Categories') }}<br />
                         <ul>
                             @foreach($categories as $category)
                             <li>

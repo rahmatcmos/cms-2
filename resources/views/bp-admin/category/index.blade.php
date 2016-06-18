@@ -12,7 +12,7 @@
                             <h4>Show</h4>
                         </div>
                         <div class="col-sm-3 pull-right">
-                            <a href="{{ url('bp-admin/category/add') }}" class="btn btn-success  pull-right">
+                            <a href="{{ url('bp-admin/category/create') }}" class="btn btn-success  pull-right">
                                 <i class="fa fa-user-plus"></i>
                                 New
                             </a>
@@ -37,7 +37,7 @@
                         <tr>
                             <td>{{$c->category_name}}</td>
                             <td>
-                                <a href="{{ url('bp-admin/category', [$c->category_id]) }}" class="btn btn-xs btn-info">Edit</a>
+                                <a href="{{ url('bp-admin/category/'.$c->category_id.'/edit') }}" class="btn btn-xs btn-info">Edit</a>
                                 <a href="{{ url('bp-admin/category/delete', [$c->category_id]) }}" class="btn btn-delete btn-xs btn-danger">Delete</a>
                                 
                             </td>

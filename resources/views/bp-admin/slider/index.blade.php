@@ -12,7 +12,7 @@
                             <h4>Show</h4>
                         </div>
                         <div class="col-sm-3 pull-right">
-                            <a href="{{ url('bp-admin/slider/add') }}" class="btn btn-success  pull-right">
+                            <a href="{{ url('bp-admin/slider/create') }}" class="btn btn-success  pull-right">
                                 <i class="fa fa-user-plus"></i>
                                 New
                             </a>
@@ -35,7 +35,7 @@
                             <td><img src="{{ url("public/uploads/".$c->slider_link)}}" alt="{{$c->slider_name}}"  height="100px"/></td>
                             <td>
                                 <a href="#" name="" />{{$c->slider_name}}</a> <br>
-                                <div class="col-sm-9"></div><div class="col-sm-3"> <a href="{{ url('bp-admin/slider', [$c->slider_id]) }}" class="btn btn-xs btn-info">Edit</a>
+                                <div class="col-sm-9"></div><div class="col-sm-3"> <a href="{{ url('bp-admin/slider/'. $c->slider_id.'/edit') }}" class="btn btn-xs btn-info">Edit</a>
                                     <a href="{{ url('bp-admin/slider/delete', [$c->slider_id]) }}" class="btn btn-delete btn-xs btn-danger">Delete</a>
                                 </div>
                             </td>
