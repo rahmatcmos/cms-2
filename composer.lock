@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2e785e381200fa504c2c4569ddbb2874",
-    "content-hash": "733c017acf52c297f2e7ada9cb76ae98",
+    "hash": "7c0d6b6bb69dd4da2ea1c730fee2a3ae",
+    "content-hash": "04ab2dd038b433ac1c7959b003c26e04",
     "packages": [
         {
             "name": "beyondplus/cmslibrary",
-            "version": "v1.0.1",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BeyondPlusTrainingCentre/cmslibrary.git",
