@@ -11,13 +11,25 @@
                   <!-- <li id="home"><a id="menu_index" href="javascript:" onclick="SwitchSport('in');"><img width="24" height="22" src="assets/img/home_icon.png"></a></li> -->
                    <li><a id="menu_sport" href="{{url('/') }}">HOME</a></li>
                    @foreach ($menus as $menu)
-                    <li><a id="menu_sport" href="{{url('/'.$menu->menu_name) }}">{{ $menu->menu_name }}</a></li>  
-                  @endforeach
-                  <!--  <li><a id="menu_casino" href="{{url('/catalog')}}">CATALOG</a></li>
-                   <li><a id="menu_keno" href="{{url('/activities')}}">ACTIVITY</a></li>
-                   <li><a id="menu_keno" href="{{url('/question+and+answer')}}">Q&A</a></li>
-                   <li><a id="menu_promo" href="{{url('/guide')}}">GUIDE</a></li> -->
-                   
+                       @if(sizeof($menu->children)>0) 
+                             <li class = "dropdown">
+                                    <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                       {{ $menu->menu_name }}
+                                       <b class = "caret"></b>
+                                    </a>
+                                    <ul class = "dropdown-menu">
+                                      @for ($i = 0; $i < sizeof($menu->children); $i++)
+                                      <li>  
+                                        <a href = "{{url('/'.$post_link->find($menu->children[$i]->post_id)->post_link) }}">
+                                        {{ $menu->children[$i]->menu_name }}</a>
+                                      </li>
+                                       @endfor
+                                    </ul>
+                              </li>      
+                        @else
+                    <li><a id="menu_sport" href="{{url('/'.$post_link->find($menu->post_id)->post_link) }}">{{ $menu->menu_name }}</a></li>  
+                        @endif
+                    @endforeach
                 </ul>
                 </div>
             </div>

@@ -29,7 +29,7 @@
 
 <!-- REQUIRED JS SCRIPTS -->
 
-        
+    <script src="{{ asset ("/bower_components/adminlte/plugins/jQuery/jQuery-2.1.4.min.js") }}"></script>
     <script src="{{ asset("/assets/bptheme1/js/main.js") }}"></script>
     <script src="{{ asset("/node_modules/bootstrap/dist/js/bootstrap.min.js") }}"></script>
 

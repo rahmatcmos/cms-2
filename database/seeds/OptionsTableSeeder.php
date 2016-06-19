@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Bp_options;
+use BeyondPlus\CmsLibrary\Models\Bp_options;
 
 class OptionsTableSeeder extends Seeder
 {
