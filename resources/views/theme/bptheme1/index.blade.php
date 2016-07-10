@@ -16,8 +16,8 @@
 				</ul>
 				<p>* Trust our service</p>
 				<div class="button fadeInUp delayp2">
-					<a href="http://www.beyondplusmyanmar.com/service" class="btn btn-primary"><i class="fa fa-desktop"></i> Our Service </a>
-					<a href="http://www.beyondplusmyanmar.com/about-us" class="btn btn-success"><i class="fa fa-desktop"></i> About Us </a>
+					<a href="http://www.beyondplus.net/service" class="btn btn-primary"><i class="fa fa-desktop"></i> Our Service </a>
+					<a href="http://www.beyondplus.net/about-us" class="btn btn-success"><i class="fa fa-desktop"></i> About Us </a>
 				</div>						
 			</div>	
 		</div>
@@ -41,7 +41,7 @@
 				<div class="col-md-12">
 					@foreach ($posts as $post)
 			      <div class="list col-md-2">
-			      	<a href="{{url('/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+			      	<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
 			    	<p>{{  $post->body }}</p>
 			      </div>
 			      	@endforeach

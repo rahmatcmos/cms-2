@@ -20,14 +20,15 @@
                                     <ul class = "dropdown-menu">
                                       @for ($i = 0; $i < sizeof($menu->children); $i++)
                                       <li>  
-                                        <a href = "{{url('/'.$post_link->find($menu->children[$i]->post_id)->post_link) }}">
+                                        <!-- $post_link->find($menu->children[$i]->post_id)->post_link -->
+                                        <a href = "{{url('/'.$menu->children[$i]->menu_link) }}">
                                         {{ $menu->children[$i]->menu_name }}</a>
                                       </li>
                                        @endfor
                                     </ul>
                               </li>      
                         @else
-                    <li><a id="menu_sport" href="{{url('/'.$post_link->find($menu->post_id)->post_link) }}">{{ $menu->menu_name }}</a></li>  
+                    <li><a id="menu_sport" href="{{url('/'.$menu->menu_link) }}">{{ $menu->menu_name }}</a></li>  
                         @endif
                     @endforeach
                 </ul>

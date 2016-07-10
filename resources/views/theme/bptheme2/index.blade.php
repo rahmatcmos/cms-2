@@ -4,10 +4,18 @@
 <section class="slider has-pattern main_bg">
 <div class="container">
 	<div class="row">
-		<div class="col-md-7 slidercontent">
+		<div class="col-md-12 slidercontent">
+			<div class="homeimage">
+				<ul class="bxslider">
+				@foreach( $sliders as $slider )
+					<li><a href="#"><img src="{{ asset("/public/uploads/".$slider->slider_link) }}" alt="{{ $slider->slider_name }}" ></a></li>
+				@endforeach
+				</ul>
+			</div>	
 
-			<div class="overview">
-				<h2 class="title animated fadeInUp delayp1" >Beyond Plus CMS 2</h2>
+
+			<!-- <div class="overview">
+				<h2 class="title animated fadeInUp delayp1" >Waihlan</h2>
 				<h5> Innovation Means Never Stop Learning </h5>
 				<ul class="summary animated fadeInUp delayp2" style="opacity: 0;">
 					<li><i class="fa fa-paint-brush"></i> Creative Web Design</li>
@@ -20,10 +28,10 @@
 					<a href="http://www.beyondplusmyanmar.com/service" class="btn btn-primary"><i class="fa fa-desktop"></i> Our Service </a>
 					<a href="http://www.beyondplusmyanmar.com/about-us" class="btn btn-success"><i class="fa fa-desktop"></i> About Us </a>
 				</div>						
-			</div>	
+			</div>	 -->
 		</div>
 		
-		<div class="col-md-5">
+		<!-- <div class="col-md-5">
 			<div class="homeimage">
 				<ul class="bxslider">
 					<li><a href="#"><img src="{{ asset("/assets/bptheme2/img/1.jpg") }}"></a></li>
@@ -33,13 +41,13 @@
 					
 				</ul>
 			</div>	
-		</div>
+		</div> -->
 	</div>
 </div>
 
 </section>
 	
-	<div class="col-md-12 main_adv">
+	<!-- <div class="col-md-12 main_adv">
 		<div class="col-md-1"></div>
 		<div class="col-md-10 listcontainer">
 				<div class="col-md-12">
@@ -53,7 +61,7 @@
 		        </div>
 	  </div>
 	  <div class="col-md-1"></div>
-	</div>
+	</div> -->
 
 
 	<div class="col-md-12 main_goal">

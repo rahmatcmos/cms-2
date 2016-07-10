@@ -38,7 +38,8 @@
 
         
     <script src="{{ asset("/assets/bptheme2/js/main.js") }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{{ asset("/node_modules/bootstrap/dist/js/bootstrap.min.js") }}"></script>
+    
     <script type="text/javascript">
         $(document).ready(function(){
           $('.bxslider').bxSlider();
