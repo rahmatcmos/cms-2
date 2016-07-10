@@ -4,7 +4,7 @@
     "keywords": ["Myanmar CMS","Beyond Plus CMS"],
     "license": "MIT",
     "type": "project",
-    "version": "1.2.1",
+    "version": "1.2.0",
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.5.9",
@@ -12,6 +12,7 @@
         "laravelcollective/html": "5.2.*",
         "beyondplus/cmslibrary": "1.1.*"
     },
+    
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
