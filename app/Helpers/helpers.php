@@ -86,12 +86,13 @@ function profile_pic_path($filename = '') {
     return join(config('app.profile_pic_path'), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $filename;
 }
 
-function languages()
+function custom_menu()
 {
-    $lang = App\Models\Language::get()->toArray();
+    $lang = BeyondPlus\CmsLibrary\Models\Bp_custom::get()->toArray();
     $languages = [];
-    foreach ($lang as $value) {
-        $languages[$value['code']] = $value['name'];
+    foreach ($lang as $key => $value) {
+         $languages[$key]['custom_name'] = $value['custom_name'];
+         $languages[$key]['custom_link'] = $value['custom_link'];
     }
     return $languages;
 }
@@ -106,45 +107,6 @@ function cities()
     return $cities;
 }
 
-function townships()
-{
-    $township = App\Models\Township::get()->toArray();
-    $townships = [];
-    foreach ($township as $value) {
-        $townships[$value['id']] = $value['name'];
-    }
-    return $townships;
-}
-
-function wards()
-{
-    $ward = App\Models\Ward::get()->toArray();
-    $wards = [];
-    foreach ($ward as $value) {
-        $wards[$value['id']] = $value['name'];
-    }
-    return $wards;
-}
-
-function categories()
-{
-    $category = App\Models\Category::get()->toArray();
-    $categorys = [];
-    foreach ($category as $value) {
-        $categorys[$value['id']] = $value['name'];
-    }
-    return $categorys;
-}
-
-function taxonomy()
-{
-    $taxonomy = App\Models\Taxonomy::get()->toArray();
-    $taxonomys = [];
-    foreach ($taxonomy as $value) {
-        $taxonomys[$value['id']] = $value['name'];
-    }
-    return $taxonomys;
-}
 
 function packages()
 {
@@ -165,9 +127,7 @@ function defaultCity()
     return $city->id;
 }
 
-function uploadPath($tail = '/') {
-    return config('backend.upload_dir') . $tail;
-}
+
 
 function parseCsv($path) {
     return \App\Libs\Convector\Csv2Array::convert($path);

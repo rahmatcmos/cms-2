@@ -16,7 +16,7 @@ class PostTableSeeder extends Seeder
         Bp_post::truncate();
         $this->faker = \Faker\Factory::create();
 
-        for ($i=0; $i < 10; $i++) {
+        for ($i=0; $i < 5; $i++) {
             $Bp_post = [
                 'title'         => $post = $this->faker->sentence($nbWords = 6, $variableNbWords = true),
                 'body'          => $this->faker->text,
