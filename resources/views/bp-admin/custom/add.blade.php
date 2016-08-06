@@ -24,13 +24,13 @@
                                 'files' => 'true',
                                 ])}}
                           
-                            @if ($errors->has())
+                          <!--   @if ($errors->has())
                                 <div class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
                                 </div>
-                            @endif
+                            @endif -->
                             {{--  --}}
                             
                             <div class="form-group">
@@ -39,14 +39,15 @@
                                
                             </div>
                             <div class="form-group">
+                                <label class="control-label">Link</label>
+                                {{Form::text('custom_link', null,['class'=>'form-control'])}}
+                               
+                            </div>
+                           <!--  <div class="form-group">
                                 <label class="control-label">Image</label>
                                 {{ Form::file('custom_icon',null,array('class'=>'form-control')) }}
                                 {{ Form::hidden('custom_icon',null,array('class'=>'form-control')) }}
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Parent Name</label>
-                               {{ Form::select('parent_id',$categories,null, array('class' => 'form-control', 'placeholder' => 'Choose Parent ...'))}}
-                            </div> 
+                            </div> -->
 
                             <div class="form-group">
                                 <label class="control-label">Active</label>
