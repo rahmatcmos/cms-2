@@ -49,3 +49,7 @@ If you discover a security vulnerability within Beyond Plus CMS, please send an 
 ## License
 
 The Beyond Plus CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Website
+
+[www.beyondplus.net](www.beyondplus.net).
