@@ -6,8 +6,10 @@
  * Date: D/M/Y
  * Time: MM:HH PM
  */
+Route::group(['middleware' => 'web'], function(){
+	
 
-Route::any('/password/reset','Front\FrontController@index');
+});
 
 Route::group(['prefix' => 'bp-admin','namespace'  =>  'BpAdmin', 'middleware' => 'admins'], function () {
 		Route::get('custom/test', 'TestController@custom');

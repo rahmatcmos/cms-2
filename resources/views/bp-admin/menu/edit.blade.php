@@ -35,6 +35,10 @@
                                 <label class="control-label">Name</label>
                                 {{ Form::text('menu_name', null,['class'=>'form-control']) }}
                             </div>
+                            <div class="form-group">
+                                <label class="control-label">Layouts</label>
+                                {{ Form::text('layouts', null,['class'=>'form-control']) }}
+                            </div>
                         <!--     <div class="form-group">
                                 <label class="control-label">Image</label>
                                 {!! Form::file('menu_icon',null,array('class'=>'form-control')) !!}
@@ -47,6 +51,10 @@
                                      {{ Form::select('parent_id',$menus,null,['class'=>'form-control']) }}
                                    
                             </div> 
+                            <div class="form-group">
+                                <label class="control-label">Weight</label>
+                                {{ Form::text('menu_weight', null,['class'=>'form-control']) }}
+                            </div>
                             
                             <div class="form-group">
                                 <label class="control-label">Active</label>

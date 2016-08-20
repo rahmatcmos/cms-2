@@ -17,7 +17,8 @@ class CreateBpMenuTable extends Migration
             $table->string('menu_name');
 			$table->string('menu_link');
             $table->integer('post_id');
-            $table->string('menu_weight');
+            $table->string('layouts');
+            $table->integer('menu_weight');
             $table->string('menu_icon');
             $table->integer('parent_id')->default(1);
             $table->integer('menu_created');

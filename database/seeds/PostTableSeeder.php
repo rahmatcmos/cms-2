@@ -28,7 +28,7 @@ class PostTableSeeder extends Seeder
             Bp_post::insert($Bp_post);
         }
 
-        for ($y=0; $y < 5; $y++) {
+        for ($y=0; $y < 1; $y++) {
             $Bp_post = [
                 'title'         => $page = $this->faker->sentence($nbWords = 6, $variableNbWords = true),
                 'body'          => $this->faker->text,
