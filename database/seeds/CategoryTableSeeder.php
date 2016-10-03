@@ -17,6 +17,7 @@ class CategoryTableSeeder extends Seeder
      	Bp_category::create([
      		'category_name' => 'Uncategorized',
      		'parent_id'		=>	'0',
+            'category_desc'=>	'Uncategorized',
             'category_link' => 'uncategorized',
      		'category_active'=>	'yes',
      		'created_at'    => '2016-06-3 00:36:29'

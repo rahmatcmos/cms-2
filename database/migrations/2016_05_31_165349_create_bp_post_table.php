@@ -16,13 +16,13 @@ class CreateBpPostTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->string('post_featured');
+            $table->integer('post_featured')->default(0);
             $table->string('post_link');
             $table->string('post_type');
-            $table->integer('post_weight');
-            $table->integer('post_view');
-            $table->string('post_active', 3);
-            $table->integer('post_created');
+            $table->integer('post_weight')->default(0);
+            $table->integer('post_view')->default(0);
+            $table->string('post_active',3)->default('yes');
+            $table->integer('post_created')->default(0);
             $table->timestamps();
         });
     }

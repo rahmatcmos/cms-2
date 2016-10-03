@@ -4,7 +4,7 @@
  * Laravel - A PHP Framework For Web Artisans
  *
  * @package  Laravel
- * @author   Taylor Otwell <taylorotwell@gmail.com>
+ * @author   Taylor Otwell <taylor@laravel.com>
  */
 
 $uri = urldecode(
@@ -16,6 +16,16 @@ $uri = urldecode(
 // application without having installed a "real" web server software here.
 if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
+}
+
+function links($url = ''){
+    if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
+     $protocol = 'http://';
+     } else {
+         $protocol = 'https://';
+     }
+     $base_url = $protocol . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
+     return $public = $base_url.'/public/'.$url;
 }
 
 require_once __DIR__.'/public/index.php';

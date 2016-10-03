@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
     <title>@if (trim($__env->yieldContent('title'))) @yield('title') - Beyond Plus CMS @endif Beyond Plus CMS </title>
-    
-    <link rel="stylesheet" type="text/css" href="{{ asset("/node_modules/bootstrap/dist/css/bootstrap.css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset("/assets/bptheme1/css/main.css") }}">
-   
+
+    <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme1/css/app.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme1/css/main.css") }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset("/assets/bptheme1/css/main.css") }}"> -->
+
     <style >
     //div {border:1px solid blue;} </style>
 </head>
@@ -28,10 +29,10 @@
 
 
 <!-- REQUIRED JS SCRIPTS -->
+    <script src="{{ asset("/public/assets/bptheme1/js/app.js") }}"></script>
 
-    <script src="{{ asset ("/bower_components/adminlte/plugins/jQuery/jQuery-2.1.4.min.js") }}"></script>
-    <script src="{{ asset("/assets/bptheme1/js/main.js") }}"></script>
-    <script src="{{ asset("/node_modules/bootstrap/dist/js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("/public/assets/bptheme1/js/main.js") }}"></script>
+
 
 </body>
 </html>

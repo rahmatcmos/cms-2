@@ -15,17 +15,16 @@ class CreateBpCategoryTable extends Migration
         Schema::create('bp_category', function (Blueprint $table) {
             $table->increments('category_id');
             $table->string('category_name');
-            $table->string('category_name_mm');
-            $table->integer('parent_id');
+            $table->string('category_name_mm')->default('');
+            $table->integer('parent_id')->default(0);
             $table->string('category_link');
-            $table->string('category_icon');
-            $table->string('category_marker');
+            $table->string('category_icon')->default('');
             $table->text('category_desc');
-            $table->integer('count_view');
-            $table->string('category_lan');
-            $table->integer('category_dash');
-            $table->string('category_active',3);
-            $table->string('category_created');
+            $table->integer('count_view')->default(0);
+            $table->string('category_lan')->default('en');
+            $table->integer('category_dash')->default(0);
+            $table->string('category_active',3)->default('yes');
+            $table->integer('category_created')->default(0);
             $table->timestamps();
         });
     }

@@ -18,23 +18,23 @@
 				<div class="button fadeInUp delayp2">
 					<a href="http://www.beyondplus.net/service" class="btn btn-primary"><i class="fa fa-desktop"></i> Our Service </a>
 					<a href="http://www.beyondplus.net/about-us" class="btn btn-success"><i class="fa fa-desktop"></i> About Us </a>
-				</div>						
-			</div>	
+				</div>
+			</div>
 		</div>
-		
+
 		<div class="col-md-5">
 			<div class="homeimage">
-				<img src="{{ asset("/assets/bptheme1/img/homeimage.png") }}" alt="Home Image" class="img-responsive" />
+				<img src="{{ asset("/public/assets/bptheme1/img/homeimage.png") }}" alt="Home Image" class="img-responsive" />
 				<!-- <p class="text-center"> Fully Responsive Design <br />
 				<i>Beyond Plus has been designed to work on all device variants </i> -->
 				<p></p>
-			</div>	
+			</div>
 		</div>
 	</div>
 </div>
 
 </section>
-	
+
 	<div class="col-md-12 main_adv">
 		<div class="col-md-1"></div>
 		<div class="col-md-10 listcontainer">
@@ -44,9 +44,8 @@
 			      	<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
 			    	<p>{{  $post->body }}</p>
 			      </div>
-			      	@endforeach
-			      
-		        </div>
+			    @endforeach
+		    </div>
 	  </div>
 	  <div class="col-md-1"></div>
 	</div>
@@ -59,11 +58,10 @@
 					<h2>Our Goal</h2>
 					<hr>
 					Today is Globalization so Marketing Strategies are changing to Digital World.
-					 Market places are also moving forward to Digital World. 
+					 Market places are also moving forward to Digital World.
 		        </div>
 	  </div>
 	  <div class="col-md-1"></div>
 	</div>
 
 @stop
-

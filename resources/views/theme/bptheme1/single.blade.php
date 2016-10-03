@@ -19,7 +19,7 @@
 				<div class="col-md-12">
 					<div class="row firstrow">
 						<div class="col-md-10">
-							<a href="{{url('/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+							<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
 							
 							<!-- <img src="{{ asset("/public/uploads/".$post->pictures) }}" name="profile" class="img-responsive" /> -->
 						</div>

@@ -14,16 +14,8 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        Admin::truncate();
         User::truncate();
         $this->faker = \Faker\Factory::create();
-        Admin::create([
-            'username'     => 'San Pwint Thu',
-        	'email'        => 'root@email.com',
-        	'password'     => Hash::make('root'),
-            'api_token'    => 'r27bHi9jwClte3W8MypKXXqpMCvIRZErVOttKsz9SNf14xKwtK6J1rjWE9Zc',
-            'created_at'   => '2016-06-3 00:36:29'
-        ]);
 
 
         for ($i=0; $i < 10; $i++) {
@@ -31,10 +23,21 @@ class UserTableSeeder extends Seeder
                 'name'          => $this->faker->firstName,
                 'email'         => $this->faker->unique()->email,
                 'password'      => bcrypt('user'),
-                'api_token'     => str_random(60)
+                'api_token'     => str_random(60),
+                'user_info'     => '{"avatar": "http://lorempixel.com/150/150/people/?55009", "phone_no": "1-428-547-2288"}'
             ];
             User::insert($user);
         }
+
+        User::create([
+            'name'          => 'San Pwint Thu',
+            'email'         => 'root@email.com',
+            'password'      => Hash::make('root'),
+            'user_type'     => 1,
+            'api_token'     => 'r27bHi9jwClte3W8MypKXXqpMCvIRZErVOttKsz9SNf14xKwtK6J1rjWE9Zc',
+            'user_info'     => '{"avatar": "http://lorempixel.com/150/150/people/?55009", "phone_no": "1-428-547-2288"}',
+            'created_at'    => '2016-06-3 00:36:29'
+        ]);
 
     }
 }
