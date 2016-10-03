@@ -14,7 +14,7 @@
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule \.php$ - [F]
+    # RewriteRule \.php$ - [F]
     RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css|woff|ttf)
     RewriteRule ^ server.php [L]
 

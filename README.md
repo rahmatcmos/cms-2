@@ -1,4 +1,4 @@
-#Beyond Plus CMS (2.0.1)
+#Beyond Plus CMS (2.0.1 Beta)
 Beyond Plus CMS is Content Managment System based on Laravel Framework. It support to create websites quickly.
 
 ##Requirement
@@ -22,6 +22,9 @@ Beyond Plus CMS is Content Managment System based on Laravel Framework. It suppo
 ##Theme
 * resources/views/theme
 
+##Theme Assets
+* public/assets/
+
 ##Default Email and Password
 * email 	: root@email.com
 * password	: root
@@ -29,13 +32,12 @@ Beyond Plus CMS is Content Managment System based on Laravel Framework. It suppo
 ##Credits
 * Laravel 5.3 Framework
 * Bootstrap CSS Framework
-* Adminlte ( Admin Panel )
+* Gentelella ( Admin Panel )
 * SCSS
 * font-awesome
 * bxslider
 * Jquery
 * Bxslider
-* laravelcollective/html
 * fzaninotto/faker
 * mockery/mockery
 * phpunit/phpunit
@@ -44,7 +46,7 @@ Beyond Plus CMS is Content Managment System based on Laravel Framework. It suppo
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Beyond Plus CMS, please send an e-mail to San Pwint Thu at sanpwintthu@hotmail.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Beyond Plus CMS, please send an e-mail to San Pwint Thu at sanpwintthu@hotmail.com.
 
 ## License
 
@@ -53,3 +55,4 @@ The Beyond Plus CMS is open-sourced software licensed under the [MIT license](ht
 ## Our Website
 
 [www.beyondplus.net](http://www.beyondplus.net)
+
