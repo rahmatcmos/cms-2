@@ -1,4 +1,4 @@
-#Beyond Plus CMS
+#Beyond Plus CMS (2.0.1)
 Beyond Plus CMS is Content Managment System based on Laravel Framework. It support to create websites quickly.
 
 ##Requirement
@@ -27,7 +27,7 @@ Beyond Plus CMS is Content Managment System based on Laravel Framework. It suppo
 * password	: root
 
 ##Credits
-* Laravel 5.2 Framework
+* Laravel 5.3 Framework
 * Bootstrap CSS Framework
 * Adminlte ( Admin Panel )
 * SCSS
