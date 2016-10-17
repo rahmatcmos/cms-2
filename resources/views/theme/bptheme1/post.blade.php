@@ -7,11 +7,10 @@
 			<div class="col-md-2 ">
 								
 				<h4>CATEGORIES<hr></h4>
-				
-				<ul>
+				<ul class="list-group">
 					@foreach($bp_cat as $category)
-					<a href="{{url('/cat/'.$category->category_link) }}"><li>{{ $category->category_name }}</li></a>
-					@endforeach
+				 		<a href="{{url('/cat/'.$category->category_link) }}"><li class="list-group-item">{{ $category->category_name }} <span class="badge">12</span></li></a>
+				 	@endforeach
 				</ul>
 			</div>
 			<div class="col-md-10 asideright">

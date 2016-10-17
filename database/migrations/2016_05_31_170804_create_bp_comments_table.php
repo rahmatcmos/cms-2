@@ -17,7 +17,7 @@ class CreateBpCommentsTable extends Migration
             $table->integer('customer_id');
             $table->text('comment_value');
             $table->string('comment_active', 3);
-            $table->integer('comment_created');
+            $table->integer('staff_id');
             $table->timestamps();
         });
     }

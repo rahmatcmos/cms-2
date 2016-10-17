@@ -27,7 +27,7 @@
   </head>
 
   <body class="nav-md">
-    <div class="container body">
+    <div class="container body" id="app">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -74,7 +74,7 @@
                   </li>
                   <li id="page" v-on:click="menu('page')"><a><i class="fa fa-edit"></i> Page <span class="fa fa-chevron-right"></span></a>
                   </li>
-                  <li id="menu" v-on:click="menu('menu')"><a><i class="fa fa-table"></i> Menu <span class="fa fa-chevron-right"></span></a>
+                  <li id="menu" v-on:click="menu('menubar')"><a><i class="fa fa-table"></i> Menu <span class="fa fa-chevron-right"></span></a>
                   </li>
                   <li id="media" href="javascript:void(0)" v-on:click="menu('media')"><a><i class="fa fa-desktop"></i> Media <span class="fa fa-chevron-right"></span></a>
                   </li>
@@ -160,7 +160,10 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ links('img/avatar.png') }}" alt="">Ko Thu
+                    <img src="{{ links('img/avatar.png') }}" alt="">
+                      @if(Auth::check())
+                        {{ Auth::user()->name }}
+                      @endif
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -175,8 +178,8 @@
                     <li>
                       <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();" data-toggle="tooltip" data-placement="top" title="Logout">
-                                   <i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-
+                                   <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </li>
                   </ul>
                 </li>
 
@@ -251,10 +254,10 @@
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" >
           <ul class="breadcrumb">
               <li><a href="#">Home</a></li>
-              <li><a href="#">@{{ currentView | reg | capitalize }} </a></li>
+              <li><a href="#">@{{ currentView | reg  }} </a></li>
           </ul>
           @yield('content')
         </div>
@@ -304,7 +307,9 @@
 
     @stack('scripts')
     <script>
-        window.Laravel = { csrfToken: '{{ csrf_token() }}' };
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
     </script>
     <script src="{{ links('js/app.js') }}" type="text/javascript"></script>
     

@@ -8,10 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme1/css/app.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme1/css/main.css") }}">
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset("/assets/bptheme1/css/main.css") }}"> -->
 
-    <style >
-    //div {border:1px solid blue;} </style>
 </head>
 <body>
 
@@ -28,7 +25,7 @@
     @include('theme.bptheme1.layouts.footer')
 
 
-<!-- REQUIRED JS SCRIPTS -->
+    <!-- REQUIRED JS SCRIPTS -->
     <script src="{{ asset("/public/assets/bptheme1/js/app.js") }}"></script>
 
     <script src="{{ asset("/public/assets/bptheme1/js/main.js") }}"></script>

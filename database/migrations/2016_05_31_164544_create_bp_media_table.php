@@ -19,7 +19,7 @@ class CreateBpMediaTable extends Migration
             $table->integer('media_type');
             $table->string('media_weight');
             $table->text('media_description');
-            $table->integer('media_created');
+            $table->integer('staff_id')->default(0);;
             $table->timestamps();
         });
     }

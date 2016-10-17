@@ -31,18 +31,12 @@ Beyond Plus CMS is Content Managment System based on Laravel Framework. It suppo
 
 ##Credits
 * Laravel 5.3 Framework
+* Vue JS 2
 * Bootstrap CSS Framework
 * Gentelella ( Admin Panel )
-* SCSS
 * font-awesome
-* bxslider
 * Jquery
 * Bxslider
-* fzaninotto/faker
-* mockery/mockery
-* phpunit/phpunit
-* symfony/css-selector
-* symfony/dom-crawler
 
 ## Security Vulnerabilities
 

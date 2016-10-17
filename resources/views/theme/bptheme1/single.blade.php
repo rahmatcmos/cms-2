@@ -4,14 +4,14 @@
 	<div class="col-md-12 main_bg">
 		<div class="col-md-1"></div>
 		<div class="col-md-10 asideleft">
-			<div class="col-md-2 ">
-					
+			<div class="col-md-2 ">	
 				<h4>CATEGORIES<hr></h4>
 				
 				<ul>
-					@foreach($bp_cat as $cat)
-					<a href="{{url('/cat/'.$cat->category_link) }}"><li>{{ $cat->category_name }}</li></a>
-					@endforeach
+					@foreach($bp_cat as $category)
+				 		<a href="{{url('/cat/'.$category->category_link) }}"><li class="list-group-item">{{ $category->category_name }} <span class="badge">12</span></li></a>
+				 	@endforeach
+
 				</ul>
 			</div>
 			<div class="col-md-10 asideright">

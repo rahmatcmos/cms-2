@@ -17,17 +17,18 @@ Vue.component('dashboard', require('./components/Dashboard.vue'));
 Vue.component('post', require('./components/Post.vue'));
 Vue.component('page', require('./components/Page.vue'));
 Vue.component('user', require('./components/User.vue'));
-Vue.component('menu', require('./components/Menu.vue'));
+Vue.component('menubar', require('./components/Menubar.vue'));
 Vue.component('media', require('./components/Media.vue'));
 Vue.component('slider', require('./components/Slider.vue'));
 Vue.component('category', require('./components/Category.vue'));
 Vue.component('taxonomy', require('./components/Taxonomy.vue'));
 Vue.component('settings', require('./components/Settings.vue'));
+Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: 'body',
+var app = new Vue({
+    el: '#app',
     data: {
-      currentView: 'menu',
+      currentView: 'menubar',
       mainUrl : $('meta[name="url"]').attr('content')+'/bp-admin',
       shutter : {post : true, page :false, media : false, menu : false, 
                 user : false , slider : false , settings : false, 
@@ -86,10 +87,7 @@ const app = new Vue({
     },
     filters: {
         reg: function(val) {
-            return val.replace('-',' ');
+            return val.replace('_',' ');
           }
-    },
-    ready(){
-
     }
 });

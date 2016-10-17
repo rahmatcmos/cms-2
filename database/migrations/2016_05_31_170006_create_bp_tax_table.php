@@ -22,7 +22,7 @@ class CreateBpTaxTable extends Migration
             $table->string('tax_lan');
             $table->integer('tax_dash');
             $table->string('tax_active', 3);
-            $table->integer('tax_created');
+            $table->integer('staff_id')->default(0);
             $table->timestamps();
         });
     }

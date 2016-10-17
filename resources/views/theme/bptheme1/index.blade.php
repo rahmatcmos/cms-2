@@ -3,7 +3,7 @@
 @section('content')
 <section class="slider has-pattern main_bg">
 <div class="container">
-	<div class="row">
+	<div>
 		<div class="col-md-7 slidercontent">
 			<div class="overview">
 				<h2 class="title animated fadeInUp delayp1" >Beyond Plus CMS</h2>
@@ -35,20 +35,14 @@
 
 </section>
 
-	<div class="col-md-12 main_adv">
-		<div class="col-md-1"></div>
-		<div class="col-md-10 listcontainer">
-				<div class="col-md-12">
-					@foreach ($posts as $post)
-			      <div class="list col-md-2">
-			      	<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
-			    	<p>{{  $post->body }}</p>
-			      </div>
-			    @endforeach
-		    </div>
-	  </div>
-	  <div class="col-md-1"></div>
-	</div>
+	<div class="col-md-12">
+		@foreach ($posts as $post)
+     		<div class="col-md-4">
+      			<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+    			<p>{{  $post->body }}</p>
+      		</div>
+    	@endforeach
+    </div>
 
 
 	<div class="col-md-12 main_goal">

@@ -24,7 +24,7 @@ class CreateBpCategoryTable extends Migration
             $table->string('category_lan')->default('en');
             $table->integer('category_dash')->default(0);
             $table->string('category_active',3)->default('yes');
-            $table->integer('category_created')->default(0);
+            $table->integer('staff_id')->default(0);
             $table->timestamps();
         });
     }

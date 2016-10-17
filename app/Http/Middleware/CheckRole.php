@@ -14,19 +14,22 @@ class CheckRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard= 'admin')
     {
-        if(Auth::guard($guard)->guest()){
-          if($request->ajax()){
-            return response('Unauthorized', 401);
-          } else{
-            return redirect()->guest('login');
-          }
-        } else if (!Auth::guard($guard)->user()->user_type == 'customer'){
-          return redirect()->to('/')->withError('Permission Denied');
-        } else if (!Auth::guard($guard)->user()->user_type == 'admin'){
-          return redirect()->to('/')->withError('Permission Denied');
+        if(Auth::check()){
+            if (!Auth::user()->user_type == 1){
+              return redirect()->to('/')->withError('Permission Denied');
+            } 
+            elseif (!Auth::user()->user_type == 2){
+              return redirect()->to('/')->withError('Permission Denied');
+            }
+            elseif (Auth::user()->user_type == 0){
+              return redirect()->to('/')->withError('Permission Denied');
+            }
+        } else {
+            return redirect()->to('/')->withError('Permission Denied');
         }
+        
         return $next($request);
     }
 }

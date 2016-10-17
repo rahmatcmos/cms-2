@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@if (trim($__env->yieldContent('title'))) @yield('title') - Beyond Plus CMS @endif Beyond Plus CMS </title>
 
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset("/node_modules/bootstrap/dist/css/bootstrap.css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset("/assets/bptheme2/css/main.css") }}"> -->
-
     <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme2/css/app.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ asset("/public/assets/bptheme2/css/main.css") }}">
     <!-- JavaScripts -->
@@ -18,8 +15,6 @@
     <!-- bxSlider CSS file -->
     <link href="{{ asset("/node_modules/bxslider/dist/jquery.bxslider.min.css") }}" rel="stylesheet" /> 
 
-    <style >
-    //div {border:1px solid blue;} </style>
 </head>
 <body>
 
