@@ -1,7 +1,7 @@
 /public/storage
 /.idea
+/node_modules
 /vendor
-/resources/assets/js/components/
 Homestead.json
 Homestead.yaml
 .env

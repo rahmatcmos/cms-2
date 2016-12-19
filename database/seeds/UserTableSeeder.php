@@ -23,7 +23,8 @@ class UserTableSeeder extends Seeder
             'password'      => Hash::make('root'),
             'user_type'     => 2,
             'api_token'     => 'r27bHi9jwClte3W8MypKXXqpMCvIRZErVOttKsz9SNf14xKwtK6J1rjWE9Zc',
-            'user_info'     => '{"avatar": "http://lorempixel.com/150/150/people/?55009", "phone_no": "1-428-547-2288"}',
+            'avatar'        => 'http://lorempixel.com/150/150/people/?55009',
+            'phone_no'      => '1-428-547-2288',
             'created_at'    => '2016-06-3 00:36:29'
         ]);
 
@@ -33,7 +34,9 @@ class UserTableSeeder extends Seeder
                 'email'         => $this->faker->unique()->email,
                 'password'      => bcrypt('user'),
                 'api_token'     => str_random(60),
-                'user_info'     => '{"avatar": "http://lorempixel.com/150/150/people/?55009", "phone_no": "1-428-547-2288"}'
+                'avatar'        => 'http://lorempixel.com/150/150/people/?55009',
+                'phone_no'      => '1-428-547-2288',
+                'created_at'    => '2016-06-3 00:36:29'     
             ];
             User::insert($user);
         }

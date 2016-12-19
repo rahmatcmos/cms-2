@@ -20,7 +20,7 @@ require('bootstrap-sass');
  require('vue-resource');
 
 window.moment = require('moment');
-//window.bxslider = require('bxslider');
+window.marked = require('marked');
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
  * the outgoing requests issued by this application. The CSRF middleware

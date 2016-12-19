@@ -24,12 +24,14 @@ Vue.component('category', require('./components/Category.vue'));
 Vue.component('taxonomy', require('./components/Taxonomy.vue'));
 Vue.component('settings', require('./components/Settings.vue'));
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('addcustom', require('./components/Addcustom.vue'));
 
 var app = new Vue({
     el: '#app',
     data: {
-      currentView: 'menubar',
+      currentView: 'addcustom',
       mainUrl : $('meta[name="url"]').attr('content')+'/bp-admin',
+      assetUrl : $('meta[name="url"]').attr('content')+'/public/uploads/',
       shutter : {post : true, page :false, media : false, menu : false, 
                 user : false , slider : false , settings : false, 
                 custom : false , addCustom: false 
@@ -89,5 +91,7 @@ var app = new Vue({
         reg: function(val) {
             return val.replace('_',' ');
           }
+    },
+    mounted() {
     }
 });

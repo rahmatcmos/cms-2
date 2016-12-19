@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/users/{user}', function () {
+	$category = BeyondPlus\CmsLibrary\Models\Bp_category::get();
+	return $category;
+    //return array("asdf"=>"asdf");
+    //return $user->email;
+});

@@ -16,10 +16,10 @@ class CreateBpMediaTable extends Migration
             $table->increments('media_id');
             $table->string('media_name');
             $table->string('media_link');
-            $table->integer('media_type');
-            $table->string('media_weight');
+            $table->string('media_type');
+            $table->integer('media_weight')->default(0);
             $table->text('media_description');
-            $table->integer('staff_id')->default(0);;
+            $table->integer('staff_id')->default(0);
             $table->timestamps();
         });
     }

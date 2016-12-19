@@ -65,44 +65,51 @@
               <div class="menu_section active">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li class="active" id="post" v-on:click="shutterAction('post')"><a><i class="fa fa-home"></i> Post <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu display" >
-                      <li><a href="javascript:void(0)" v-on:click="menu('post')">Post</a></li>
-                      <li><a href="javascript:void(0)" v-on:click="menu('category')">Category</a></li>
-                      <li><a href="javascript:void(0)" v-on:click="menu('taxonomy')">Taxonomy</a></li>
-                    </ul>
-                  </li>
-                  <li id="page" v-on:click="menu('page')"><a><i class="fa fa-edit"></i> Page <span class="fa fa-chevron-right"></span></a>
-                  </li>
-                  <li id="menu" v-on:click="menu('menubar')"><a><i class="fa fa-table"></i> Menu <span class="fa fa-chevron-right"></span></a>
-                  </li>
-                  <li id="media" href="javascript:void(0)" v-on:click="menu('media')"><a><i class="fa fa-desktop"></i> Media <span class="fa fa-chevron-right"></span></a>
-                  </li>
-                  <li id="slider" href="javascript:void(0)" v-on:click="menu('slider')"><a><i class="fa fa-clone"></i> Slider <span class="fa fa-chevron-right"></span></a>
-                  </li>
-
+                  @foreach(module(0) as $key => $value)
+                      @if(count($value->child) > 0) 
+                      <li class="active" id="{{ $value->module_link }}" v-on:click="shutterAction('{{ $value->module_link }}')"><a><i class="fa fa-home"></i> {{ $value->module_name }}  <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu display" >
+                          @foreach($value->child as $child)
+                            <li><a href="javascript:void(0)" v-on:click="menu('{{ $child->module_link }}')">{{ $child->module_name }}</a></li>
+                          @endforeach
+                        </ul>
+                      </li> 
+                      @else
+                        <li id="{{ $value->module_link }}" v-on:click="menu('{{ $value->module_link }}')">
+                        <a><i class="{{ $value->module_icon }}"></i> {{ $value->module_name }}<span class="fa fa-chevron-right"></span></a>
+                        </li>
+                      @endif
+                  @endforeach
                 </ul>
               </div>
               <div class="menu_section">
-                <h3>Admin</h3>
+                <h3>Manage</h3>
                 <ul class="nav side-menu">
-                  <li id="user" v-on:click="menu('user')"><a><i class="fa fa-user"></i>  User <span class="fa fa-chevron-right"></span></a>
-                  </li>
-                  <li id="settings" v-on:click="shutterAction('settings')"><a><i class="fa fa-bug"></i> Settings <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="javascript:void(0)" v-on:click="menu('settings')">Generals</a></li>
-                      <li><a href="projects.html">Account</a></li>
-                    </ul>
-                  </li>
-                  <li id="custom" v-on:click="shutterAction('custom')"><a><i class="fa fa-windows"></i> Custom <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">Test</a></li>
-                    </ul>
-                  </li>
-                  <li id="addCustom" v-on:click="shutterAction('addCustom')"><a><i class="fa fa-sitemap"></i> Add Custom<span class="fa fa-chevron-down"></span></a>
+                  @foreach(module(1) as $key => $value)
+                      @if(count($value->child) > 0 || $value->module_link == 'custom') 
+                        <li id="{{ $value->module_link }}" v-on:click="shutterAction('{{ $value->module_link }}')"><a><i class="fa fa-home"></i> {{ $value->module_name }}  <span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu" >
+                            @if($value->module_link == 'custom')
+                              @foreach(custom() as $child)
+                                <li><a href="{{ url('bp-admin/custom/'.$child->custom_link) }}">{{ $child->custom_name}}</a></li>
+                              @endforeach
+                            @else
+                              @foreach($value->child as $child)
+                              <li><a href="javascript:void(0)" v-on:click="menu('{{ $child->module_link }}')">{{ $child->module_name }}</a></li>
+                              @endforeach
+                            @endif
+                          </ul>
+                        </li> 
+                      @else
+                        <li id="{{ $value->module_link }}" v-on:click="menu('{{ $value->module_link }}')">
+                        <a><i class="{{ $value->module_icon }}"></i> {{ $value->module_name }}<span class="fa fa-chevron-right"></span></a>
+                        </li>
+                      @endif
+                  @endforeach
+                  {{-- <li id="addCustom" v-on:click="shutterAction('addCustom')"><a><i class="fa fa-sitemap"></i> Add Custom<span class="fa fa-chevron-right"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="#level1_1">New Custom</a>
-                       {{--  <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
                             <li class="sub_menu"><a href="level2.html">Level Two</a>
                             </li>
@@ -111,11 +118,11 @@
                             <li><a href="#level2_2">Level Two</a>
                             </li>
                           </ul>
-                        </li> --}}
-                        {{-- <li><a href="#level1_2">Level One</a> --}}
                         </li>
-                    </ul>
-                  </li>
+                        {{-- <li><a href="#level1_2">Level One</a>
+                       {{--  </li>
+                    </ul> 
+                  </li> --}}
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Module Store <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -139,7 +146,6 @@
               </a> -->
               <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();" data-toggle="tooltip" data-placement="top" title="Logout">
-                           <!-- <i class="fa fa-lock"></i> Log out</a> -->
                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                    {{ csrf_field() }}
@@ -255,7 +261,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main" >
-          <ul class="breadcrumb">
+          <ul class="breadcrumb"> 
               <li><a href="#">Home</a></li>
               <li><a href="#">@{{ currentView | reg  }} </a></li>
           </ul>
@@ -274,7 +280,7 @@
       </div>
     </div>
 
-    {{-- <script src="{{ url('node_modules/gentelella/vendors/jquery/dist/jquery.min.js') }}"></script> 
+    {{-- 
     <script src="{{ url('node_modules/gentelella/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js') }}"></script>
     <script src="{{ url('node_modules/gentelella/vendors/jquery.hotkeys/jquery.hotkeys.js') }}"></script> --}}
     <!-- jQuery -->

@@ -66,7 +66,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'user_info' => '{"avatar": "http://lorempixel.com/150/150/people/?37474", "phone_no": "1-439-732-0932 x9868"}',
+            'avatar' => "http://lorempixel.com/150/150/people/?37474",
+            'phone_no' => "1-439-732-0932 x9868",
             'api_token' => str_random(60)
         ]);
     }

@@ -16,7 +16,8 @@ class CreateBpPostTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->integer('post_featured')->default(0);
+            $table->integer('featured')->default(0);
+            $table->string('featured_img', 100)->default();
             $table->string('post_link');
             $table->string('post_type');
             $table->integer('post_weight')->default(0);

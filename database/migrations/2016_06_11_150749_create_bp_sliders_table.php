@@ -16,8 +16,8 @@ class CreateBpSlidersTable extends Migration
             $table->increments('slider_id');
             $table->string('slider_name');
             $table->string('slider_link');
-            $table->integer('slider_type');
-            $table->string('slider_weight');
+            $table->string('slider_type');
+            $table->integer('slider_weight');
             $table->text('slider_description');
             $table->integer('staff_id');
             $table->timestamps();

@@ -25,8 +25,6 @@
 		<div class="col-md-5">
 			<div class="homeimage">
 				<img src="{{ asset("/public/assets/bptheme1/img/homeimage.png") }}" alt="Home Image" class="img-responsive" />
-				<!-- <p class="text-center"> Fully Responsive Design <br />
-				<i>Beyond Plus has been designed to work on all device variants </i> -->
 				<p></p>
 			</div>
 		</div>
@@ -36,10 +34,14 @@
 </section>
 
 	<div class="col-md-12">
-		@foreach ($posts as $post)
+		@foreach (posts(10) as $post)
      		<div class="col-md-4">
       			<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+      			@if($post->featured_img != '')
+      				<img src="{{ url('/public/uploads/'.$post->featured_img)}}" class="img-responsive" />
+      			@else
     			<p>{{  $post->body }}</p>
+    			@endif
       		</div>
     	@endforeach
     </div>
@@ -59,3 +61,4 @@
 	</div>
 
 @stop
+
