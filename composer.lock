@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dcb06d3cd192eda0c2c127d6a371d671",
-    "content-hash": "1e67fe14bcb6f09a74a643f6047c0414",
+    "hash": "3e78b7248ebc7fd02eb405338612a6c4",
+    "content-hash": "6cd6fb962e15d3231fe166877d0b7613",
     "packages": [
         {
             "name": "beyondplus/cmslibrary",
@@ -624,6 +624,44 @@
                 "psr-3"
             ],
             "time": "2016-07-29 03:23:52"
+        },
+        {
+            "name": "mrabbani/laravel-module-manager",
+            "version": "v1.02",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrabbani/laravel_module_manager.git",
+                "reference": "d6bc130e3a65c2fd09e022e92024234a29fa3993"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrabbani/laravel_module_manager/zipball/d6bc130e3a65c2fd09e022e92024234a29fa3993",
+                "reference": "d6bc130e3a65c2fd09e022e92024234a29fa3993",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.3.*",
+                "illuminate/database": "5.3.*",
+                "php": ">=5.6.4"
+            },
+            "type": "laravel",
+            "autoload": {
+                "psr-4": {
+                    "Mrabbani\\ModuleManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mrabbani",
+                    "email": "mahbub.rucse@gmail.com"
+                }
+            ],
+            "description": "Laravel Module Management",
+            "time": "2016-12-04 12:38:56"
         },
         {
             "name": "mtdowling/cron-expression",
