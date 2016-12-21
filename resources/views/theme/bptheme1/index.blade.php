@@ -38,7 +38,7 @@
      		<div class="col-md-4">
       			<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
       			@if($post->featured_img != '')
-      				<img src="{{ url('/public/uploads/'.$post->featured_img)}}" class="img-responsive" />
+      				{{-- <img src="{{ url('/public/uploads/'.$post->featured_img)}}" class="img-responsive" /> --}}
       			@else
     			<p>{{  $post->body }}</p>
     			@endif
