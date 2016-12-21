@@ -227,6 +227,13 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'bp_post' => BeyondPlus\CmsLibrary\Models\Bp_post::class,
+        'bp_category' => BeyondPlus\CmsLibrary\Models\Bp_category::class,
+        'bp_menu' => BeyondPlus\CmsLibrary\Models\Bp_menu::class,
+        'bp_relationship' => BeyondPlus\CmsLibrary\Models\Bp_relationship::class,
+        'bp_slider' => BeyondPlus\CmsLibrary\Models\Bp_slider::class,
+        'bp_module' => BeyondPlus\CmsLibrary\Models\Bp_module::class,
+        'bp_custom' => BeyondPlus\CmsLibrary\Models\Bp_custom::class,
+
     ],
 
 ];
