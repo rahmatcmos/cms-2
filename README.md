@@ -4,7 +4,7 @@ Beyond Plus CMS is the modular based Content Managment System. It support to cre
 ##Requirement
 
 * PHP 5.5.9 greater or equal
-* Mysql
+* Database
 * Composer
 
 ##Installation
@@ -32,10 +32,10 @@ Beyond Plus CMS is the modular based Content Managment System. It support to cre
 ##We used Technology
 * Laravel 5.3 Framework
 * Vue JS 2
+* Jquery
 * Bootstrap CSS Framework
 * Gentelella ( CSS Admin Panel )
 * font-awesome
-* Jquery
 
 ##Frontend Screenshot
 ![alt text](https://github.com/BeyondPlusTrainingCentre/cms/raw/master/frontend.png "Front Screenshot")
