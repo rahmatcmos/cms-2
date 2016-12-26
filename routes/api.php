@@ -18,8 +18,9 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/users/{user}', function () {
-	$category = BeyondPlus\CmsLibrary\Models\Bp_category::get();
+	$category = bp_category::get();
 	return $category;
-    //return array("asdf"=>"asdf");
-    //return $user->email;
 });
+
+Route::post('/login','Backend\ApiController@login');
+Route::post('/register','Backend\ApiController@register');

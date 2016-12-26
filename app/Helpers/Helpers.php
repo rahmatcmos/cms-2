@@ -11,6 +11,6 @@ function module($sectionId)
 
 function custom()
 {
-	$query = BeyondPlus\CmsLibrary\Models\Bp_custom::get();
+	$query = bp_custom::get();
 	return $query;
 }
