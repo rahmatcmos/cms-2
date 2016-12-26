@@ -55,3 +55,7 @@ The Beyond Plus CMS is open-sourced software licensed under the [MIT license](ht
 
 [www.beyondplus.net](http://www.beyondplus.net)
 
+## Tutorial Link
+
+[Youtube] (https://www.youtube.com/watch?v=WV9rfMdqmh0)
+
