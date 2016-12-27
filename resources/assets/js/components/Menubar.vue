@@ -84,6 +84,13 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Custom Link / View<span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" id="menu_name" v-model="menu.menu_name" required="required" class="form-control col-md-7 col-xs-12" v-on:keyup="menuPara">
+              </div>
+            </div>
+            <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" >Description <span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -100,10 +107,10 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Parent Name</label>
+              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Menu Type</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <select v-model="menu.parent_id" class="form-control">
-                  <option value="0" >Choose the menu</option>
+                  <option value="0" >Choose the menu type</option>
                   <option v-for="option in menus" v-bind:value="option.menu_id">
                     {{ option.menu_name }}
                   </option>

@@ -29,7 +29,7 @@ Vue.component('addcustom', require('./components/Addcustom.vue'));
 var app = new Vue({
     el: '#app',
     data: {
-      currentView: 'addcustom',
+      currentView: 'menubar',
       mainUrl : $('meta[name="url"]').attr('content')+'/bp-admin',
       assetUrl : $('meta[name="url"]').attr('content')+'/public/uploads/',
       shutter : {post : true, page :false, media : false, menu : false, 

@@ -24,7 +24,7 @@ class ApiController extends Controller
 
         if( Auth::attempt($credentials) )
         {
-            return json_encode( array('message' => 'success' ) );
+            return json_encode( array('message' => 'success', 'api_token' => Auth::user()->api_token ) );
         } else {
             return json_encode( array('message' => 'fail' ) );
         }
@@ -35,7 +35,7 @@ class ApiController extends Controller
         $validator = Validator::make($request->all(), [
             'password' => 'required|min:4',
             'name' => 'required',
-            'email' => 'required|unique:User'
+            'email' => 'required|unique:user'
         ]);
 
         if ($validator->fails()) {

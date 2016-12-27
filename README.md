@@ -1,5 +1,5 @@
 #Beyond Plus CMS (2.0.1 Beta)
-Beyond Plus CMS is the modular based Content Managment System. It support to create websites and web application quickly. 
+Beyond Plus CMS is the modular based Content Management System. It support to create websites and web application quickly. 
 
 ##Requirement
 
@@ -9,12 +9,16 @@ Beyond Plus CMS is the modular based Content Managment System. It support to cre
 
 ##Installation
 
-## Terminal and Database connect
+##Terminal and Database connect
 
 * composer create-project --prefer-dist beyondplus/cms projectname
 * create database and configuration in .env (or) vi .env
 * composer dump-autoload
 * php artisan migrate:refresh --seed
+
+##For Custom Module
+* php artisan module:create name-of-your-module
+* php artisan module:install {module_alias_name}
 
 ##Usage
 * siteurl.com/bp-admin
@@ -43,19 +47,19 @@ Beyond Plus CMS is the modular based Content Managment System. It support to cre
 ##Backend Screenshot
 ![alt text](https://github.com/BeyondPlusTrainingCentre/cms/raw/master/backend.png "Backend Screenshot")
 
-## Security Vulnerabilities
+##Security Vulnerabilities
 
 If you discover a security vulnerability within Beyond Plus CMS, please send an e-mail to San Pwint Thu at sanpwintthu@hotmail.com.
 
-## License
+##License
 
 The Beyond Plus CMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-## Our Website
+##Our Website
 
 [www.beyondplus.net](http://www.beyondplus.net)
 
-## Youtube Video
+##Youtube Video
 
 [https://www.youtube.com/watch?v=WV9rfMdqmh0] (https://www.youtube.com/watch?v=WV9rfMdqmh0)
 
