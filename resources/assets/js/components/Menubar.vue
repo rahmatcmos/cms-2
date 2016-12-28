@@ -60,7 +60,7 @@
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMenu"><i class="fa fa-plus"></i></a>
             </li>
-            <li><a class="close-link" v-on:click="fetchMenu"><i class="fa fa-close"></i></a>
+            <li><a class="close-link" v-on:click="close-menu"><i class="fa fa-close"></i></a>
             </li>
           </ul>
           <div class="clearfix"></div>
@@ -141,7 +141,7 @@
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMenu"><i class="fa fa-plus"></i></a>
             </li>
-            <li><a class="close-link" v-on:click="fetchMenu"><i class="fa fa-close"></i></a>
+            <li><a class="close-link" v-on:click="closeMenu"><i class="fa fa-close"></i></a>
             </li>
           </ul>
           <div class="clearfix"></div>
@@ -211,7 +211,7 @@
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMenu"><i class="fa fa-plus"></i></a>
             </li>
-            <li><a class="close-link" v-on:click="fetchMenu"><i class="fa fa-close"></i></a>
+            <li><a class="close-link" v-on:click="closeMenu"><i class="fa fa-close"></i></a>
             </li>
             <li>
           </ul>
@@ -391,6 +391,10 @@ export default {
         },
         menuPara: function() {
           this.menu.menu_link = this.menu.menu_name.replace(/[\. ,:-=]+/g, "-").toLowerCase()
+        }
+        closeMenu: function() {
+          this.fetchMenu()
+          this.menuDetail = 0 
         }
     },
     filters: {
