@@ -33,10 +33,12 @@
 
 </section>
 
-	<div class="col-md-12">
+	<div class="container">
 		@foreach (posts(10) as $post)
      		<div class="col-md-4">
-      			<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+      			<a href="{{url('/detail/'.$post->post_link) }}" name="" class="col-md-12"><h4>{{ $post->title }}</h4></a>
+      			<span class="col-md-6">{{ $post->creator->name}}</span>
+      			<span class="col-md-6 text-right">{{ $post->created_at->diffForHumans() }}</span>
       			@if($post->featured_img != '')
       				{{-- <img src="{{ url('/public/uploads/'.$post->featured_img)}}" class="img-responsive" /> --}}
       			@else

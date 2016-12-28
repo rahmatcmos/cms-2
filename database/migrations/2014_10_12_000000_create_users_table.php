@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('user_type')->default(0);
             $table->string('api_token', 60)->unique();
             $table->string('phone_no',30);
+            $table->string('activation_key',6)->default(0);
+            $table->integer('status')->default(0);
             $table->string('avatar',100);
             $table->rememberToken();
             $table->timestamps();
