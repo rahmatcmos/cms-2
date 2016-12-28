@@ -5,7 +5,7 @@ Beyond Plus CMS is the modular based Content Management System. It support to cr
 
 * PHP 5.5.9 greater or equal
 * Database
-* ![alt text](https://getcomposer.org/ "Composer")
+* [Composer](https://getcomposer.org/)
 
 ##Installation
 
@@ -61,5 +61,4 @@ The Beyond Plus CMS is open-sourced software licensed under the [MIT license](ht
 
 ##Youtube Video
 
-[https://www.youtube.com/watch?v=WV9rfMdqmh0] (https://www.youtube.com/watch?v=WV9rfMdqmh0)
-
+[https://www.youtube.com/watch?v=WV9rfMdqmh0](https://www.youtube.com/watch?v=WV9rfMdqmh0)
