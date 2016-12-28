@@ -5,7 +5,7 @@ Beyond Plus CMS is the modular based Content Management System. It support to cr
 
 * PHP 5.5.9 greater or equal
 * Database
-* Composer
+* ![alt text](https://getcomposer.org/ "Composer")
 
 ##Installation
 
