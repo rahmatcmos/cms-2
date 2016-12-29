@@ -42,7 +42,7 @@
       			@if($post->featured_img != '')
       				{{-- <img src="{{ url('/public/uploads/'.$post->featured_img)}}" class="img-responsive" /> --}}
       			@else
-    			<p>{{  $post->body }}</p>
+    			<p class="col-md-12">{{  $post->body }}</p>
     			@endif
       		</div>
     	@endforeach

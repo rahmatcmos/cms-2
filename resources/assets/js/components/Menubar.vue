@@ -78,7 +78,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Custom Link / Template <span class="required">*</span>
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Custom Link<span class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <input type="text" id="menu_link" v-model="menu.menu_link" required="required" class="form-control col-md-7 col-xs-12">
@@ -106,6 +106,7 @@
               <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <select v-model="menu.parent_id" class="form-control" >
+                  <option value="1">Choose the parent menu</option>
                   <option v-for="option in menus" v-bind:value="option.menu_id">
                     {{ option.menu_name }}
                   </option>
@@ -177,6 +178,7 @@
               <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <select v-model="menu.parent_id" class="form-control" >
+                  <option value="1">Choose the parent menu</option>
                   <option v-for="option in menus" v-bind:value="option.menu_id">
                     {{ option.menu_name }}
                   </option>
@@ -204,7 +206,7 @@
       </div>
     </div>
 
-    <div class="col-md-8 col-sm-12 col-xs-12" v-if="menuDetail == 0">
+    <div class="col-md-8 col-sm-12 col-xs-12" v-if="menuDetail == 3">
       <div class="x_panel">
         <div class="x_title">
           <h2>Menu Tables <small>total menu </small></h2>
@@ -229,9 +231,9 @@
             </thead>
             <tbody>
               <tr v-for="(m, key) in menus">
-                <th scope="row"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key)" >{{ key+1 }}</a></th>
-                <td><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key)" >{{ m.menu_name}}</a></td>
-                <td width="30%"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key)" >{{ m.parent_id | parentName }}</a></td>
+                <th scope="row"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key , m.menu_type)" >{{ key+1 }}</a></th>
+                <td><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key, m.menu_type)" >{{ m.menu_name}}</a></td>
+                <td width="30%"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditMenu(key, m.menu_type)" >{{ m.parent_id | parentName }}</a></td>
                 <td><a href="javascript:void(0)" name="Delete" v-on:click="btnDeleteMenu(m.menu_id)" ><i class="fa fa-close"></i></a></td>
               </tr>
             </tbody>
@@ -294,7 +296,7 @@ export default {
                         menu_type: "default",
                         menu_created: 0
                       },
-          menuDetail : 0,
+          menuDetail : 3,
           perPage : 10,
           submit:true,
           edit: false,
@@ -304,10 +306,9 @@ export default {
     methods: {
         newMenu : function() {
           this.menu = this.f5menu
-          this.menuDetail = true
+          this.menuDetail = 1
         },
         fetchMenu: function() {
-            this.menuDetail = 0
             this.segUrl = '/menu?per_page='+this.perPage
             this.$http.get(this.url + this.segUrl).then((response) => {
                 this.posts = response.data.posts
@@ -318,12 +319,12 @@ export default {
             });
         },
         btnMenu: function(id) {
-          var menu = this.menu
-          this.menu = this.f5Menu  
+          var menu = this.menu  
             if(id == 0){
               this.segUrl = '/menu' 
               this.$http.post(this.url+ this.segUrl, menu).then((response) => {
-                  this.menuDetail = 1
+                  this.menu = this.f5Menu 
+                  this.menuDetail = 3
                   this.fetchMenu()
               }, (response) => {
                   // error callback
@@ -331,7 +332,8 @@ export default {
             } else {
               this.segUrl = '/menu/'+id 
               this.$http.patch(this.url+ this.segUrl, menu).then((response) => {
-                  this.menuDetail = 2
+                  this.menu = this.f5Menu 
+                  this.menuDetail = 3
                   this.fetchMenu()
               }, (response) => {
                   // error callback
@@ -339,14 +341,18 @@ export default {
             }    
             $("#menu_name").focus();
         },
-        btnEditMenu: function(id){  
-          this.menuDetail = 2,  
+        btnEditMenu: function(id, menu_type){  
+          if(menu_type == 'default') {
+            this.menuDetail = 2  
+          } else {
+            this.menuDetail = 1  
+          }
           this.submit = false
           this.edit = true      
-          this.menu = this.menus[id];
+          this.menu = this.menus[id]
         },
         btnDeleteMenu: function(id){
-          this.menuDetail = 0,
+          this.menuDetail = 3
           this.segUrl = '/menu/'+id
           this.$http.delete(this.url+this.segUrl).then((response) => {
             this.fetchMenu()
@@ -391,10 +397,10 @@ export default {
         },
         menuPara: function() {
           this.menu.menu_link = this.menu.menu_name.replace(/[\. ,:-=]+/g, "-").toLowerCase()
-        }
+        },
         closeMenu: function() {
+          this.menuDetail = 3
           this.fetchMenu()
-          this.menuDetail = 0 
         }
     },
     filters: {

@@ -19,14 +19,25 @@
                                     <ul class = "dropdown-menu">
                                       @foreach ($menu->children as $sub)
                                         <li>  
-                                          <a href = "{{url('/'.$sub->menu_link) }}">
+                                          @if($sub->menu_type == 'default')
+                                            <a href = "{{url('/'.$sub->menu_link) }}">
+                                          @else
+                                            <a href = "{{$sub->menu_link}}">
+                                          @endif
                                           {{ $sub->menu_name }}</a>
                                         </li>
                                        @endforeach
                                     </ul>
                               </li>      
                         @else
-                    <li><a href="{{url('/'.$menu->menu_link) }}">{{ $menu->menu_name }}</a></li>  
+                    <li>
+                          @if($menu->menu_type == 'default')
+                              <a href = "{{url('/'.$menu->menu_link) }}">
+                          @else
+                              <a href = "{{$menu->menu_link}}">
+                          @endif
+                            {{ $menu->menu_name }}</a>
+                    </li>  
                         @endif
                     @endforeach
                 </ul>
