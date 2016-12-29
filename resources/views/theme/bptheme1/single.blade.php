@@ -6,7 +6,7 @@
 			<div class="col-md-2 ">	
 				<h4>CATEGORIES<hr></h4>		
 				<ul>
-					@foreach($bp_cat as $category)
+					@foreach(bp_cat() as $category)
 				 		<a href="{{url('/cat/'.$category->category_link) }}"><li class="list-group-item">{{ $category->category_name }} <span class="badge">12</span></li></a>
 				 	@endforeach
 				</ul>

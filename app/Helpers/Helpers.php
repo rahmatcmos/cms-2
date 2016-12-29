@@ -14,3 +14,9 @@ function custom()
 	$query = bp_custom::get();
 	return $query;
 }
+
+function bp_cat()
+{
+	$query = bp_category::get();
+	return $query;
+}
