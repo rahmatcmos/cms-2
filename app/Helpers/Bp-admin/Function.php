@@ -20,3 +20,9 @@ function bp_cat()
 	$query = bp_category::get();
 	return $query;
 }
+
+function posts($limitId)
+{
+    $post = bp_post::where('post_type','post')->orderby('id','desc')->paginate($limitId);
+    return $post;
+}

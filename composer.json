@@ -27,8 +27,8 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Helpers/Customs.php",
-            "app/Helpers/Helpers.php"
+            "app/Helpers/Helper.php",
+            "app/Helpers/Bp-admin/Function.php"
         ]
     },
     "autoload-dev": {
