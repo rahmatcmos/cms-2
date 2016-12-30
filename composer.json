@@ -13,7 +13,7 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "beyondplus/cmslibrary": "2.0.*",
-        "mrabbani/laravel-module-manager": "^1.02"
+        "mrabbani/laravel-module-manager": "^1.03"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

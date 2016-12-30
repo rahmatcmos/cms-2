@@ -12,7 +12,7 @@ class SitemapController extends Controller
 	{
 	  $post = bp_post::orderBy('updated_at', 'desc')->first();
 
-	  return response()->view('vendor.sitemap.index', [
+	  return response()->view('sitemap::sitemap.index', [
 	      'post' => $post,
 	  ])->header('Content-Type', 'text/xml');
 	}
@@ -21,7 +21,7 @@ class SitemapController extends Controller
 	public function posts()
 	{
 	    $posts = bp_post::get();
-	    return response()->view('vendor.sitemap.posts', [
+	    return response()->view('sitemap::sitemap.posts', [
 	        'posts' => $posts,
 	    ])->header('Content-Type', 'text/xml');
 	}
@@ -29,7 +29,7 @@ class SitemapController extends Controller
 	public function categories()
 	{
 	    $categories = bp_category::all();
-	    return response()->view('vendor.sitemap.categories', [
+	    return response()->view('sitemap::sitemap.categories', [
 	        'categories' => $categories,
 	    ])->header('Content-Type', 'text/xml');
 	}
