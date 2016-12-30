@@ -1,7 +1,10 @@
 {
     "name": "beyondplus/cms",
     "description": "Beyond Plus CMS",
-    "keywords": ["Beyond Plus CMS", "Modular based CMS"],
+    "keywords": [
+        "Beyond Plus CMS",
+        "Modular based CMS"
+    ],
     "license": "MIT",
     "type": "project",
     "version": "2.0.3",
@@ -24,7 +27,8 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Sitemap\\": "modules/sitemap/src"
         },
         "files": [
             "app/Helpers/Helper.php",

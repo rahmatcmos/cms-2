@@ -129,7 +129,7 @@
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            <input type="text" name="post_template" value="default">
+            <input type="text" name="post_template" value="default" class="form-control">
         </div>
       </div>
     </div>
