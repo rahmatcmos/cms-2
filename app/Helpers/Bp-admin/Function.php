@@ -26,3 +26,9 @@ function posts($limitId)
     $post = bp_post::where('post_type','post')->orderby('id','desc')->paginate($limitId);
     return $post;
 }
+
+function menu()
+{
+    $menu = bp_menu::with('children')->where('parent_id',1)->orderBy('menu_weight')->get();
+    return $menu;
+}

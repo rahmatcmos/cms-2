@@ -25,7 +25,7 @@
       <div class="col-md-1"> </div>
       <div class="col-md-4 ">
 
-          <p style="clear:both;">Copyright © Beyond Plus 2016, all rights reserved</p>
+          <p style="clear:both;">Copyright © Beyond Plus 2016 - {{ date('Y') }}, all rights reserved</p>
       </div>
        <div class="col-md-3 nr_left">
           <ul>

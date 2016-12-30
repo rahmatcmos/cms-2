@@ -123,6 +123,15 @@
             </div>
         </div>
       </div>
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Template</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <input type="text" name="post_template" value="default">
+        </div>
+      </div>
     </div>
      
     <div class="col-md-12 col-sm-12 col-xs-12" v-if="!postDetail">
