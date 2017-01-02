@@ -1,3 +1,4 @@
+{{-- this is a blog template --}}
 @extends('theme.bptheme1.layouts.app')
 @section('content')
 	<div class="col-md-12 main_bg">
@@ -16,7 +17,7 @@
 					<div class="col-md-12">
 						<div class="row firstrow">
 							<div class="col-md-10">
-								<a href="{{url('/detail/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
+								<a href="{{url('/'.$post->post_link) }}" name="" ><h2>{{ $post->title }}</h2></a>
 							</div>
 							<div class="col-md-2"></div>
 						</div>
