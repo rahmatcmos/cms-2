@@ -34,7 +34,7 @@
 </section>
 
 	<div class="container">
-		@foreach (posts(9) as $post)
+		@foreach (bp_post(9) as $post)
      		<div class="col-md-4">
       			<a href="{{url('/'.$post->post_link) }}" name="" class="col-md-12"><h4>{{ $post->title }}</h4></a>
       			<span class="col-md-6">{{ $post->creator->name}}</span>

@@ -9,7 +9,7 @@
                   
                 <ul class="nav nav-pills">
                    <li><a id="menu_home" href="{{url('/') }}">HOME</a></li>
-                   @foreach (menu() as $menu)
+                   @foreach (bp_menu() as $menu)
                        @if(sizeof($menu->children)>0) 
                              <li class = "dropdown">
                                     <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
