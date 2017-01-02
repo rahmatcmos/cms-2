@@ -68,27 +68,17 @@
         </div>
       </div>
     </div>
-   <!--  <div class="col-md-4 col-sm-4 col-xs-12" v-if="postDetail">
+    <div class="col-md-4 col-sm-4 col-xs-12" v-if="postDetail">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Page <small>form tool</small></h2>
-          <ul class="nav navbar-right panel_toolbox">
-            <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newPost"><i class="fa fa-plus"></i></a>
-            </li>
-            <li><a class="close-link" v-on:click="fetchPost"><i class="fa fa-close"></i></a>
-            </li>
-          </ul>
+          <h2>Template</h2>
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
-          <br />
-          <form id="demo-form2" data-parsley-validate class="form-horizontal" method="post">
-
-            sadf
-          </form>
+            <input type="text" name="post_template" class="form-control" v-model="post.post_template">
         </div>
       </div>
-    </div> -->
+    </div>
      
     <div class="col-md-12 col-sm-12 col-xs-12" v-if="!postDetail">
       <div class="x_panel">
@@ -147,6 +137,7 @@ export default {
                   body: "",
                   post_featured: 0,
                   post_link: "",
+                  post_template: "",
                   post_weight: 0,
                   post_view: 0,
                   post_active: "yes",
@@ -158,6 +149,7 @@ export default {
                   body: "",
                   post_featured: 0,
                   post_link: "",
+                  post_template: "default",
                   post_type: "page",
                   post_weight: 0,
                   post_view: 0,
@@ -170,6 +162,7 @@ export default {
                   body: "",
                   post_featured: 0,
                   post_link: "",
+                  post_template: "default",
                   post_type: "page",
                   post_weight: 0,
                   post_view: 0,
@@ -191,7 +184,7 @@ export default {
           this.postDetail = true
           this.submit = true
           this.post = { id: 0,title: "",body: "",
-                  post_featured: 0,post_link: "",post_type: "page",
+                  post_featured: 0,post_link: "",post_template: "default",post_type: "page",
                   post_weight: 0,post_view: 0,post_active: "yes",
                   post_created: 0,created_at: "2016-06-03 00:36:29"}
         },

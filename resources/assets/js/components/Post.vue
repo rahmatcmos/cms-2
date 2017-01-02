@@ -129,7 +129,7 @@
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            <input type="text" name="post_template" value="default" class="form-control">
+            <input type="text" name="post_template" class="form-control" v-model="post.post_template">
         </div>
       </div>
     </div>
@@ -194,6 +194,7 @@ export default {
                   featured: 0,
                   featured_img: '',
                   post_link: "",
+                  post_template: "",
                   post_weight: 0,
                   post_view: 0,
                   post_active: "yes",
@@ -206,6 +207,7 @@ export default {
                   featured: 0,
                   featured_img: '',
                   post_link: "",
+                  post_template: "default",
                   post_type: "post",
                   post_weight: 0,
                   post_view: 0,
@@ -219,6 +221,7 @@ export default {
                   featured: 0,
                   featured_img: '',
                   post_link: "",
+                  post_template: "default",
                   post_type: "post",
                   post_weight: 0,
                   post_view: 0,
@@ -239,7 +242,7 @@ export default {
           this.postDetail = true
           this.submit = true
           this.post = { id: 0,title: "",body: "",
-                  post_featured: 0,post_link: "",post_type: "post",
+                  post_featured: 0,post_link: "",post_template:"",post_type: "post",
                   post_weight: 0,post_view: 0,post_active: "yes",
                   post_created: 0,created_at: "2016-06-03 00:36:29"}
           this.selected = []
