@@ -21,7 +21,7 @@
 					</div>
 					<div class="col-md-12 toolbar">
 						<div class="col-md-10 html">
-							{{ $post->body }}
+							{!! $post->body !!}
 						</div>
 						<div class="col-md-2">
 							
@@ -39,9 +39,7 @@
 @push('scripts')
 
 	<script type="text/javascript">
-        var mark = $('.html').html();
-        var result = marked(mark);
-        $('.html').html(result);
+        // alert("test");
     </script>
 
 @endpush

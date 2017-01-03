@@ -40,7 +40,7 @@
               </label>
               <div class="col-md-12 col-sm-12 col-xs-12" >
                 <vue-editor
-                  :use-save-button="false" :editor-content="htmlForEditor" @editor-updated="handleUpdatedContent">
+                  :use-save-button="false" :editor-content="post.body" @editor-updated="handleUpdatedContent">
                 </vue-editor>
                 <!-- <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px" @input="update">
                 </textarea>
