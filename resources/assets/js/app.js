@@ -30,6 +30,7 @@ var app = new Vue({
     el: '#app',
     data: {
       currentView: 'post',
+      baseUrl : $('meta[name="url"]').attr('content'),
       mainUrl : $('meta[name="url"]').attr('content')+'/bp-admin',
       assetUrl : $('meta[name="url"]').attr('content')+'/public/uploads/',
       shutter : {post : true, page :false, media : false, menu : false, 

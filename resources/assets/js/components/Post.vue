@@ -23,6 +23,7 @@
                 <input type="text" id="title" v-model="post.title" required="required" class="form-control col-md-7 col-xs-12" v-on:keyup="postPara">
               </div>
             </div>
+            
             <div class="form-group">
               <label class="col-md-12 col-sm-12 col-xs-12" >
               {{ url }}/{{ post.post_link}}
@@ -38,10 +39,13 @@
                 </slot>
               </label>
               <div class="col-md-12 col-sm-12 col-xs-12" >
-                <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px" @input="update">
+                <vue-editor
+                  :use-save-button="false" :editor-content="htmlForEditor" @editor-updated="handleUpdatedContent">
+                </vue-editor>
+                <!-- <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px" @input="update">
                 </textarea>
                 <div type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left x_content warp_box html"  v-html="compiledMarkdown" style="min-height:300px"  v-if="preview">
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="form-group">
@@ -179,7 +183,7 @@
 </template>
 
 <script>
-
+import { VueEditor } from 'vue2-editor'
 export default {
   props: ['page','url','assets'],
   data(){
@@ -234,10 +238,17 @@ export default {
           submit:true,
           edit: false,
           total: 1,
-          preview: false
+          preview: false,
+          htmlForEditor: null
         }
     },
+    components: {
+      VueEditor
+    },
     methods: {
+        handleUpdatedContent: function (value) {
+          this.post.body = value
+        },
         newPost : function() {
           this.postDetail = true
           this.submit = true
@@ -307,17 +318,18 @@ export default {
             if(id == 0){
               this.segUrl = '/post' 
               this.$http.post(this.url+ this.segUrl, post).then((response) => {
-                  this.fetchPost()
+                this.fetchPost()
               }, (response) => {
                   // error callback
               });
             } else {
               this.segUrl = '/post/'+id 
               this.$http.patch(this.url+ this.segUrl, post).then((response) => {
-                  this.fetchPost()
+                this.fetchPost()
               }, (response) => {
                   // error callback
               }); 
+
             }    
             $("#title").focus();
             this.total = this.total + 1;
@@ -365,30 +377,6 @@ export default {
         postPara: function() {
           var temp = this.post.title.replace(/[\. ,:-=]+/g, "-").toLowerCase()
           this.post.post_link = temp
-        },
-        update: _.debounce(function (e) {
-          this.post.body = e.target.value
-        }, 300)
-    },
-    computed: {
-        selectAll: {
-            get: function () {
-                return this.allCategory ? this.selected.length == this.allCategory.length : false;
-            },
-            set: function (value) {
-                var selected = [];
-
-                if (value) {
-                    this.allCategory.forEach(function (category) {
-                        selected.push(category.category_id);
-                    });
-                }
-
-                this.selected = selected;
-            }
-        },
-        compiledMarkdown: function () {
-          return marked(this.post.body, { sanitize: true })
         }
     },
     filters: {
