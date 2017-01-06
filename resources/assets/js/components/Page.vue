@@ -38,6 +38,7 @@
                 </slot>
               </label>
               <div class="col-md-12 col-sm-12 col-xs-12" >
+                <div id="sum"></div>
                 <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px">
                 </textarea>
                 <div type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left x_content warp_box"  v-html="compiledMarkdown" style="min-height:300px"  v-if="preview">
@@ -296,7 +297,14 @@ export default {
       }
     },
     mounted() {
+      // $('#sum').summernote({
+      //     height: 300,
+      //     minHeight: null,
+      //     maxHeight: null
+      // });
+      $('#sum').summernote('code');
        this.fetchPost()
+
     }
 }
 

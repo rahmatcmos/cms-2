@@ -14,7 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('dashboard', require('./components/Dashboard.vue'));
-Vue.component('post', require('./components/Post.vue'));
+//Vue.component('post', require('./components/Post.vue'));
 Vue.component('page', require('./components/Page.vue'));
 Vue.component('user', require('./components/User.vue'));
 Vue.component('menubar', require('./components/Menubar.vue'));
@@ -29,7 +29,7 @@ Vue.component('addcustom', require('./components/Addcustom.vue'));
 var app = new Vue({
     el: '#app',
     data: {
-      currentView: 'post',
+      currentView: 'page',
       baseUrl : $('meta[name="url"]').attr('content'),
       mainUrl : $('meta[name="url"]').attr('content')+'/bp-admin',
       assetUrl : $('meta[name="url"]').attr('content')+'/public/uploads/',
