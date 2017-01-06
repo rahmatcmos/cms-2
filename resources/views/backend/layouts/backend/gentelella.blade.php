@@ -27,12 +27,6 @@
 
 <!-- include libraries(jQuery, bootstrap) -->
 <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"> -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> 
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
-
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
   </head>
 
   <body class="nav-md">
@@ -300,7 +294,7 @@
     <!-- NProgress -->
     <script src="{{ url('node_modules/gentelella/vendors/nprogress/nprogress.js') }}"></script>
     <!-- Chart.js -->
-    <script src="{{ url('node_modules/gentelella/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    {{-- <script src="{{ url('node_modules/gentelella/vendors/Chart.js/dist/Chart.min.js') }}"></script> --}}
     <!-- gauge.js -->
     <script src="{{ url('node_modules/gentelella/vendors/bernii/gauge.js/dist/gauge.min.js') }}"></script>
     <!-- bootstrap-progressbar -->

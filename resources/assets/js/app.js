@@ -14,7 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('dashboard', require('./components/Dashboard.vue'));
-//Vue.component('post', require('./components/Post.vue'));
+Vue.component('post', require('./components/Post.vue'));
 Vue.component('page', require('./components/Page.vue'));
 Vue.component('user', require('./components/User.vue'));
 Vue.component('menubar', require('./components/Menubar.vue'));

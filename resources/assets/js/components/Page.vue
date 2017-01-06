@@ -25,24 +25,22 @@
             </div>
             <div class="form-group">
               <label class="col-md-12 col-sm-12 col-xs-12" >
-              {{ url }}/{{ post.post_link}}
+                <a :href="base+'/'+post.post_link" target="_blank">{{ base }}/{{ post.post_link}}</a>
               </label>
             </div>
             <div class="form-group">
               <label class="col-md-12 col-sm-12 col-xs-12" >Description <span class="required">*</span>
-              <slot v-if="preview == true">
-                  <a href="javascript:void(0)" v-on:click="preview = false" >Preview</a>
-                </slot>
-                <slot v-if="preview == false">
-                  <a href="javascript:void(0)" v-on:click="preview = true" >Preview</a>
-                </slot>
               </label>
               <div class="col-md-12 col-sm-12 col-xs-12" >
-                <div id="sum"></div>
+
+               <!--  
+                  <vue-editor
+                  :use-save-button="false" :editor-content="htmlForEditor" @editor-updated="handleUpdatedContent1" :editor-toolbar="customToolbar">
+                </vue-editor> -->
                 <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px">
                 </textarea>
-                <div type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left x_content warp_box"  v-html="compiledMarkdown" style="min-height:300px"  v-if="preview">
-                </div>
+                <!-- <div type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left x_content warp_box"  v-html="compiledMarkdown" style="min-height:300px"  v-if="preview">
+                </div> --> 
               </div>
             </div>
             <div class="form-group">
@@ -126,9 +124,9 @@
 </template>
 
 <script>
-
+import { VueEditor } from 'vue2-editor'
 export default {
-  props: ['page','url'],
+  props: ['page','url','base'],
   data(){
       return {
           segUrl : '',
@@ -177,10 +175,25 @@ export default {
           edit: false,
           total: 0,
           image: '',
-          preview: false
+          preview: false,
+          customToolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['image', 'code-block']
+          ],
+          htmlForEditor: null
         }
     },
+    components: {
+      VueEditor
+    },
     methods: {
+        setEditorContent: function () {
+          this.htmlForEditor = '<h1>Html For Editor</h1>'
+        },
+        handleUpdatedContent1: _.debounce (function (e) {
+          this.htmlForEditor = e
+        }, 300),
         newPost : function() {
           this.postDetail = true
           this.submit = true
@@ -291,18 +304,7 @@ export default {
           }
       }
     },
-    computed: {
-      compiledMarkdown: function () {
-        return marked(this.post.body, { sanitize: true })
-      }
-    },
     mounted() {
-      // $('#sum').summernote({
-      //     height: 300,
-      //     minHeight: null,
-      //     maxHeight: null
-      // });
-      $('#sum').summernote('code');
        this.fetchPost()
 
     }

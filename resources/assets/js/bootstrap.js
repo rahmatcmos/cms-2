@@ -20,7 +20,7 @@ require('bootstrap-sass');
  require('vue-resource');
 
 window.moment = require('moment');
-window.summernote = require('summernote');
+//window.summernote = require('summernote');
 
 
 /**

@@ -26,7 +26,7 @@
             
             <div class="form-group">
               <label class="col-md-12 col-sm-12 col-xs-12" >
-              {{ url }}/{{ post.post_link}}
+                <a :href="base+'/'+post.post_link" target="_blank">{{ base }}/{{ post.post_link}}</a>
               </label>
             </div>
             <div class="form-group">
@@ -40,8 +40,9 @@
               </label>
               <div class="col-md-12 col-sm-12 col-xs-12" >
                 <vue-editor
-                  :use-save-button="false" :editor-content="post.body" @editor-updated="handleUpdatedContent">
+                  :use-save-button="false" :editor-content="post.body" @editor-updated="handleUpdatedContent" :editor-toolbar="customToolbar">
                 </vue-editor>
+
                 <!-- <textarea type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" v-model="post.body" style="min-height:300px" @input="update">
                 </textarea>
                 <div type="text" id="post_desc" required="required" class="form-control col-md-12 col-sm-12 col-xs-12 text-left x_content warp_box html"  v-html="compiledMarkdown" style="min-height:300px"  v-if="preview">
@@ -185,7 +186,7 @@
 <script>
 import { VueEditor } from 'vue2-editor'
 export default {
-  props: ['page','url','assets'],
+  props: ['page','url','assets','base'],
   data(){
       return {
           segUrl : '',
@@ -239,6 +240,11 @@ export default {
           edit: false,
           total: 1,
           preview: false,
+          customToolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['image', 'code-block']
+          ],
           htmlForEditor: null
         }
     },
@@ -246,9 +252,9 @@ export default {
       VueEditor
     },
     methods: {
-        handleUpdatedContent: function (value) {
-          this.post.body = value
-        },
+        handleUpdatedContent: _.debounce (function (e) {
+          this.htmlForEditor = e
+        }, 300),
         newPost : function() {
           this.postDetail = true
           this.submit = true
@@ -312,7 +318,7 @@ export default {
         },
         btnPost: function(id) {
           var post = this.post
-           
+          post.body = this.htmlForEditor
           post.categories = this.selected
           this.post = this.f5Post  
             if(id == 0){
