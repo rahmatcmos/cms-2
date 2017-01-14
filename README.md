@@ -1,4 +1,4 @@
-#Beyond Plus CMS (2.0.5 Beta)
+#Beyond Plus CMS (2.0.6 Beta)
 Beyond Plus CMS is the modular based Content Management System. It support to create websites and web application quickly. 
 
 ##Requirement
