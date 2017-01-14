@@ -32,3 +32,9 @@ function bp_menu()
     $menu = bp_menu::with('children')->where('parent_id',1)->orderBy('menu_weight')->get();
     return $menu;
 }
+
+function bp_slider()
+{
+    $banner = bp_slider::orderBy('slider_id')->get();
+    return $banner;
+}

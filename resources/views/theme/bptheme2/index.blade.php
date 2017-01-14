@@ -8,7 +8,7 @@
             <div style="position:absolute;display:block;background:url('public/img/slider/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-            <div data-p="225.00">
+            {{-- <div data-p="225.00">
                 <img data-u="image" src="{{ links('img/slider/red.jpg') }}" />
                 <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">TOUCH SWIPE SLIDER</div>
                 <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
@@ -21,14 +21,20 @@
                     <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0;" src="{{ links('img/slider/c-navigator-horizontal.png') }}" />
                     <img data-u="caption" data-t="3" style="position:absolute;top:740px;left:1600px;width:257px;height:300px;z-index:0;" src="{{ links('img/slider/c-finger-pointing.png') }}" />
                 </div>
-            </div>
-            <a data-u="any" href="http://www.jssor.com" style="display:none">Full Width Slider</a>
-            <div data-p="225.00" style="display:none;">
+            </div> --}}
+            @foreach(bp_slider() as $slider)
+            	<div data-p="225.00">
+            		<img data-u="image" src="{{ links('uploads/').$slider->slider_link }}" />
+            		<div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">{{ $slider->slider_name }}</div>
+                <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
+            	</div>
+            @endforeach
+            {{-- <div data-p="225.00" style="display:none;">
                 <img data-u="image" src="{{ links('img/slider/purple.jpg') }}" />
             </div>
             <div data-p="225.00" data-po="80% 55%" style="display:none;">
                 <img data-u="image" src="{{ links('img/slider/blue.jpg') }}" />
-            </div>
+            </div> --}}
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
