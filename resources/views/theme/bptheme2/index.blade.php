@@ -26,15 +26,9 @@
             	<div data-p="225.00">
             		<img data-u="image" src="{{ links('uploads/').$slider->slider_link }}" />
             		<div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">{{ $slider->slider_name }}</div>
-                <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
+                	<div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
             	</div>
             @endforeach
-            {{-- <div data-p="225.00" style="display:none;">
-                <img data-u="image" src="{{ links('img/slider/purple.jpg') }}" />
-            </div>
-            <div data-p="225.00" data-po="80% 55%" style="display:none;">
-                <img data-u="image" src="{{ links('img/slider/blue.jpg') }}" />
-            </div> --}}
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
