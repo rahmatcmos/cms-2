@@ -37,7 +37,8 @@ Beyond Plus CMS is the modular based Content Management System. It support to cr
 ##Custom Module
 * php artisan module:create name-of-your-module
 * php artisan module:install {module_alias_name} 
-##Dashboard Modified
+
+##Dashboard
 * npm run watch
 
 ##We used Technology
