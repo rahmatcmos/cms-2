@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\Admin;
 use App\User;
 
 class UserTableSeeder extends Seeder

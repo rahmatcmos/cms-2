@@ -1,14 +1,14 @@
-#Beyond Plus CMS (2.0.6 Beta)
+#Beyond Plus CMS (2.1.0 Beta)
 Beyond Plus CMS is the modular based Content Management System. It support to create websites and web application quickly. 
 
 ##Requirement
 
-* PHP 5.5.9 greater or equal
+* PHP 7 greater or equal
 * Database
 * [Composer](https://getcomposer.org)
 * [Nodejs](https://nodejs.org)
 
-##Installation
+#Installation
 
 ##Terminal and Database connect
 
