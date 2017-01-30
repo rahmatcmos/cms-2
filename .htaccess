@@ -1,4 +1,3 @@
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -17,7 +16,7 @@
     RewriteRule \.env$ - [F]
     #RewriteRule \.php$ - [F]
     RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css|woff|ttf|mp4)
-    RewriteRule ^ server.php [L]
+    RewriteRule ^ index.php [L]
 
 
     # Handle Authorization Header

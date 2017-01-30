@@ -45,6 +45,7 @@ var app = new Vue({
       //    this.fetchShutterAction()
       },
       shutterAction: function(input){
+
           $.each( this.shutter, function( key, val ) {
               if(key == input ){
                   if(val == true) {

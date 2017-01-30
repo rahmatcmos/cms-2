@@ -11,7 +11,7 @@
     <title>Beyond Plus CMS</title>
 
     <!-- Styles -->
-    <link href="{{ links('css/app.css') }}" rel="stylesheet">
+    <link href="{{ url('public/css/app.css') }}" rel="stylesheet">
 
     <link href="{{ url('node_modules/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 

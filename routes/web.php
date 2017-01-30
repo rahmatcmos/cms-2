@@ -5,26 +5,22 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 // Route::get('/', function () {
-//     return view('layouts.backend.gentelella');
+//     return view('welcome');
 // });
 
-Route::auth();
-Route::group(['middleware' => 'admin'], function () {
-    // Route::get('/home', 'HomeController@index');
-    // Route::get('/dashboard', 'Backend\BackendController@index');
-
-    Route::get('/customers/search', 'Backend\ApiController@search');
-    Route::get('/customers/note', 'Backend\ApiController@note');
-    Route::get('/customers/{customerId}/note', 'Backend\ApiController@getCustomerNote');
-    Route::post('/customers/{customerId}/note', 'Backend\ApiController@postCustomerNote');
+Route::get('/home', function() {
+	echo "dsaf";
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 

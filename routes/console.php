@@ -1,6 +1,6 @@
 <?php
 
-//use Illuminate\Foundation\Inspiring;
+use Illuminate\Foundation\Inspiring;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,30 +13,6 @@
 |
 */
 
-// Artisan::command('inspire', function () {
-//     $this->comment(Inspiring::quote());
-// });
-
-// Artisan::command('generate:model {name : The name of model generate}', function(){
-
-// 	exec('touch app/'. $this->argument('name'). '.php');
-
-// })->describe('Generate a special model.');
-
-
-// Artisan::command('generate:model {name : The name of model generate}', function(){
-
-// 	$model = $this->argument('name');
-
-// 	File::put("app/{$model}.php", "class {}");
-
-// })->describe('Generate a special model.');
-
-
-Artisan::command('generate:model {name : The name of model generate}', function(){
-
-	$model = $this->argument('name');
-
-	File::put("app/{$model}.php", "class {}");
-
-})->describe('Generate a special model.');
+Artisan::command('inspire', function () {
+    $this->comment(Inspiring::quote());
+})->describe('Display an inspiring quote');
