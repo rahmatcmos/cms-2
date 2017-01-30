@@ -1,4 +1,4 @@
-@extends('theme.bptheme1.layouts.app')
+@extends('theme::bptheme1.layouts.app')
 
 @section('content')
 <section class="slider has-pattern main_bg">

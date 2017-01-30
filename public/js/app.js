@@ -51630,7 +51630,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.btnDeletePost(p.post_id)
+          _vm.btnDeletePost(p.id)
         }
       }
     }, [_c('i', {
@@ -52113,7 +52113,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.btnEditPost(p.id)
+          _vm.btnEditPost(key)
         }
       }
     }, [_vm._v(_vm._s(p.title))])]), _vm._v(" "), _c('td', [_c('a', {
@@ -52123,7 +52123,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       on: {
         "click": function($event) {
-          _vm.btnDeletePost(p.post_id)
+          _vm.btnDeletePost(p.id)
         }
       }
     }, [_c('i', {

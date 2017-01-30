@@ -108,7 +108,7 @@
               <tr v-for="(p,key) in posts">
                 <th scope="row"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditPost(key)" >{{ key+1 }}</a></th>
                 <td><a href="javascript:void(0)" name="Edit" v-on:click="btnEditPost(key)" >{{ p.title}}</a></td>
-                <td><a href="javascript:void(0)" name="Delete" v-on:click="btnDeletePost(p.post_id)" ><i class="fa fa-close"></i></a></td>
+                <td><a href="javascript:void(0)" name="Delete" v-on:click="btnDeletePost(p.id)" ><i class="fa fa-close"></i></a></td>
               </tr>
             </tbody>
           </table>
