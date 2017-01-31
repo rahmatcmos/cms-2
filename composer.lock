@@ -4,22 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a2d19e6847db8437a0895677e9b14c97",
-    "content-hash": "cdf6f845c0920cb860c2be95c355ef85",
+    "hash": "4c68cace3dfc17cc8e40a19f8d51ceb0",
+    "content-hash": "6720b34c92c57e81bb7f42bc1b0884a5",
     "packages": [
         {
             "name": "beyondplus/cmslibrary",
-            "version": "v2.0.5",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BeyondPlusTrainingCentre/cmslibrary.git",
-                "reference": "5a71ffe309c9231762534ecddbe47cfcffaa3487"
+                "reference": "d6fa5fbb15cf7b61eecef5b67b8bddee82691819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BeyondPlusTrainingCentre/cmslibrary/zipball/5a71ffe309c9231762534ecddbe47cfcffaa3487",
-                "reference": "5a71ffe309c9231762534ecddbe47cfcffaa3487",
+                "url": "https://api.github.com/repos/BeyondPlusTrainingCentre/cmslibrary/zipball/d6fa5fbb15cf7b61eecef5b67b8bddee82691819",
+                "reference": "d6fa5fbb15cf7b61eecef5b67b8bddee82691819",
                 "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.4.*",
+                "laravel/tinker": "~1.0",
+                "nwidart/laravel-modules": "^1.16"
             },
             "type": "library",
             "autoload": {
@@ -35,7 +40,7 @@
                 }
             ],
             "description": "Support for Beyond Plus CMS",
-            "time": "2017-01-03 07:48:12"
+            "time": "2017-01-30 10:06:48"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

@@ -124,7 +124,7 @@
 </template>
 
 <script>
-import { VueEditor } from 'vue2-editor'
+//import { VueEditor } from 'vue2-editor'
 export default {
   props: ['page','url','base'],
   data(){
@@ -184,9 +184,9 @@ export default {
           htmlForEditor: null
         }
     },
-    components: {
-      VueEditor
-    },
+    // components: {
+    //   VueEditor
+    // },
     methods: {
         setEditorContent: function () {
           this.htmlForEditor = '<h1>Html For Editor</h1>'
@@ -258,7 +258,7 @@ export default {
             this.total = this.total + 1;
         },
         btnEditPost: function(id){  
-            this.postDetail = true,  
+            this.postDetail = true  
             this.submit = false
             this.edit = true      
             this.post = this.posts[id];
