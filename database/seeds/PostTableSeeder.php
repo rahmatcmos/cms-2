@@ -22,6 +22,7 @@ class PostTableSeeder extends Seeder
                 'body'          => $this->faker->text,
                 'post_link'     => str_replace(' ', '-', strtolower($post)),
                 'post_type'     => 'post',
+                'featured_img'  => 'default.jpg',
                 'staff_id'      => 1,
                 'created_at'    => '2016-06-3 00:36:29'
 
@@ -35,6 +36,7 @@ class PostTableSeeder extends Seeder
                 'body'          => $this->faker->text,
                 'post_link'     => str_replace(' ', '-', strtolower($page)),
                 'post_type'     => 'page',
+                'featured_img'  => 'default.jpg',
                 'staff_id'      => 1,
                 'created_at'    => '2016-06-3 00:36:29'
             ];

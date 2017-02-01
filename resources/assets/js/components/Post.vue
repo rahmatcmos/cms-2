@@ -167,7 +167,7 @@
             <tbody>
               <tr v-for="(p,key) in posts">
                 <th scope="row"><a href="javascript:void(0)" name="Edit" v-on:click="btnEditPost(p.id)" >{{ key+1 }}</a></th>
-                <td><a href="javascript:void(0)" name="Edit" v-on:click="btnEditPost(key)" >{{ p.title}}</a></td>
+                <td><a href="javascript:void(0)" name="Edit" v-on:click="btnEditPost(p.id)" >{{ p.title}}</a></td>
                 <td><a href="javascript:void(0)" name="Delete" v-on:click="btnDeletePost(p.id)" ><i class="fa fa-close"></i></a></td>
               </tr>
             </tbody>
@@ -197,7 +197,7 @@ export default {
                   title: "",
                   body: "",
                   featured: 0,
-                  featured_img: '',
+                  featured_img: "default.jpg",
                   post_link: "",
                   post_template: "",
                   post_weight: 0,
@@ -210,7 +210,7 @@ export default {
                   title: "",
                   body: "",
                   featured: 0,
-                  featured_img: '',
+                  featured_img: "default.jpg",
                   post_link: "",
                   post_template: "default",
                   post_type: "post",
@@ -224,7 +224,7 @@ export default {
                   title: "",
                   body: "",
                   featured: 0,
-                  featured_img: '',
+                  featured_img: "default.jpg",
                   post_link: "",
                   post_template: "default",
                   post_type: "post",
@@ -259,7 +259,7 @@ export default {
           this.postDetail = true
           this.submit = true
           this.post = { id: 0,title: "",body: "",
-                  post_featured: 0,post_link: "",post_template:"",post_type: "post",
+                  featured: 0,featured_img: "default.jpg",post_link: "",post_template:"default",post_type: "post",
                   post_weight: 0,post_view: 0,post_active: "yes",
                   post_created: 0,created_at: "2016-06-03 00:36:29"}
           this.selected = []
@@ -340,7 +340,7 @@ export default {
             $("#title").focus();
             this.total = this.total + 1;
         },
-        btnEditPost: function(id){  
+        btnEditPost: function(id){ 
             this.postDetail = true,  
             this.submit = false   
             //this.post = this.posts[id];
