@@ -1,82 +1,107 @@
 <template>
-  <div class="row">
+  <div>
     
     <div class="col-md-12 col-sm-12 col-xs-12" v-if="mediaDetail">
-      <div class="x_panel">
-        <div class="x_title">
-          <h2>Media <small>form tool</small></h2>
-          <ul class="nav navbar-right panel_toolbox">
-            <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMedia"><i class="fa fa-plus"></i></a>
-            </li>
-            <li><a class="close-link" v-on:click="fetchMedia"><i class="fa fa-close"></i></a>
-            </li>
-          </ul>
-          <div class="clearfix"></div>
-        </div>
-        <div class="x_content">
-          <br />
-          <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Media <small>form tool</small></h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMedia"><i class="fa fa-plus"></i></a>
+                </li>
+                <li><a class="close-link" v-on:click="fetchMedia"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <br />
+              <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
 
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Title <span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" id="media_name" v-model="media.media_name" required="required" class="form-control col-md-7 col-xs-12">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Image <span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div v-if="!image">
-                  <h2>Select an image</h2>
-                  <input type="file" @change="onFileChange">
+
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" >Image <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div v-if="!media.media_link">
+                      <h4>Select an Media</h4>
+                      <input type="file" @change="onFileChange">
+                    </div>
+                    <div v-else>
+                      <img :src="assets+media.media_link" class="img-responsive" />
+                      <button @click="removeMedia">Remove</button>
+                    </div>
+                  </div>
                 </div>
-                <div v-else>
-                  <img :src="image" />
-                  <button @click="removeImage">Remove image</button>
+
+              </form>
+            </div>
+          </div>
+
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Media <small>form tool</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link" href="javascript:void(0)" v-on:click="newMedia"><i class="fa fa-plus"></i></a>
+              </li>
+              <li><a class="close-link" v-on:click="fetchMedia"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" enctype="multipart/form-data">
+
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <label class="control-label" >Title <span class="required">*</span>
+                  </label>
+                    <input type="text" id="media_name" v-model="media.media_name" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">Type<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class="form-control" v-model="media.media_type">
-                          <option value="image">image</option>
-                          <option value="video">video</option>
-                </select>
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <label class="control-label">Type<span class="required">*</span>
+                  </label>
+                    <select class="form-control" v-model="media.media_type">
+                              <option value="image">image</option>
+                              <option value="video">video</option>
+                    </select>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" >Description <span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <textarea type="text" id="media_desc" required="required" class="form-control col-md-7 col-xs-12 text-left" v-model="media.media_desc">
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                <label class="control-label" >Description <span class="required">*</span>
+                </label>
+                  <textarea type="text" id="media_desc" required="required" class="form-control col-md-7 col-xs-12 text-left" v-model="media.media_desc">
                 </textarea>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">Active<span class="required">*</span>
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class="form-control" v-model="media.media_active">
-                          <option value="">Choose option</option>
-                          <option value="yes">Yes</option>
-                          <option value="no">No</option>
-                </select>
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <label class="control-label">Active<span class="required">*</span>
+                  </label>
+                    <select class="form-control" v-model="media.media_active">
+                              <option value="">Choose option</option>
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                    </select>
+                </div>
               </div>
-            </div>
-            <div class="ln_solid"></div>
-            <div class="form-group">
-              <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button type="submit" class="btn btn-primary">Cancel</button>
-                <button type="submit" class="btn btn-success" onclick="return false" v-on:click="btnMedia(0)" v-if="submit">Submit</button>
-                <button type="submit" class="btn btn-success" onclick="return false" v-on:click="btnMedia(media.media_id)" v-if="edit">Edit</button>
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
+                  <button type="submit" class="btn btn-primary">Cancel</button>
+                  <button type="submit" class="btn btn-success" onclick="return false" v-on:click="btnMedia(0)" v-if="submit">Submit</button>
+                  <button type="submit" class="btn btn-success" onclick="return false" v-on:click="btnMedia(media.media_id)" v-if="edit">Edit</button>
+                </div>
               </div>
-            </div>
 
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -172,7 +197,7 @@
 <script>
 
 export default {
-  props: ['page','url','assets'],
+  props: ['page','url','base','assets'],
   data(){
       return {
           segUrl : '',
@@ -322,6 +347,9 @@ export default {
         getPerPage: function(){
           var array = this.segUrl.split('per_page=');
           this.perPage = parseInt(array[1]) + 10;
+        },
+        removeMedia: function(){
+            this.media.media_link = ""
         }
     },
     filters: {

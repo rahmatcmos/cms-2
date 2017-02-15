@@ -169,7 +169,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ links('img/avatar.png') }}" alt="">
+                    <img src="{{ asset('public/img/avatar.png') }}" alt="">
                       @if(Auth::check())
                         {{ Auth::user()->name }}
                       @endif
@@ -200,7 +200,7 @@
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
-                        <span class="image"><img src="{{ links('img/avatar.png') }}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ asset('public/img/avatar.png') }}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -212,7 +212,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ links('img/avatar.png') }}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ asset('public/img/avatar.png') }}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -224,7 +224,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ links('img/avatar.png') }}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ asset('public/img/avatar.png') }}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -236,7 +236,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ links('img/avatar.png') }}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ asset('public/img/avatar.png') }}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -320,7 +320,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    <script src="{{ links('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/js/app.js') }}" type="text/javascript"></script>
     
   </body>
 </html>

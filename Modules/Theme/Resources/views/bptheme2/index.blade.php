@@ -9,22 +9,22 @@
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
             {{-- <div data-p="225.00">
-                <img data-u="image" src="{{ links('img/slider/red.jpg') }}" />
+                <img data-u="image" src="{{ asset('public/img/slider/red.jpg') }}" />
                 <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">TOUCH SWIPE SLIDER</div>
                 <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
                 <div data-u="caption" data-t="0" style="position:absolute;top:120px;left:650px;width:470px;height:220px;z-index:0;">
-                    <img style="position:absolute;top:0px;left:0px;width:470px;height:220px;z-index:0;" src="{{ links('img/slider/c-phone-horizontal.png') }}" />
+                    <img style="position:absolute;top:0px;left:0px;width:470px;height:220px;z-index:0;" src="{{ asset('public/img/slider/c-phone-horizontal.png') }}" />
                     <div style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0; overflow:hidden;">
-                        <img data-u="caption" data-t="1" style="position:absolute;top:0px;left:0px;width:379px;height:213px;z-index:0;" src="{{ links('img/slider/c-slide-1.jpg') }}" />
-                        <img data-u="caption" data-t="2" style="position:absolute;top:0px;left:379px;width:379px;height:213px;z-index:0;" src="{{ links('img/slider/c-slide-3.jpg') }}" />
+                        <img data-u="caption" data-t="1" style="position:absolute;top:0px;left:0px;width:379px;height:213px;z-index:0;" src="{{ asset('public/img/slider/c-slide-1.jpg') }}" />
+                        <img data-u="caption" data-t="2" style="position:absolute;top:0px;left:379px;width:379px;height:213px;z-index:0;" src="{{ asset('public/img/slider/c-slide-3.jpg') }}" />
                     </div>
-                    <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0;" src="{{ links('img/slider/c-navigator-horizontal.png') }}" />
-                    <img data-u="caption" data-t="3" style="position:absolute;top:740px;left:1600px;width:257px;height:300px;z-index:0;" src="{{ links('img/slider/c-finger-pointing.png') }}" />
+                    <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0;" src="{{ asset('public/img/slider/c-navigator-horizontal.png') }}" />
+                    <img data-u="caption" data-t="3" style="position:absolute;top:740px;left:1600px;width:257px;height:300px;z-index:0;" src="{{ asset('public/img/slider/c-finger-pointing.png') }}" />
                 </div>
             </div> --}}
             @foreach(bp_slider() as $slider)
             	<div data-p="225.00">
-            		<img data-u="image" src="{{ links('uploads/').$slider->slider_link }}" />
+            		<img data-u="image" src="{{ asset('public/uploads/').$slider->slider_link }}" />
             		<div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">{{ $slider->slider_name }}</div>
                 	<div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
             	</div>

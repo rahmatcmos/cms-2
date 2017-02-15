@@ -82,6 +82,6 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{ links('js/app.js')}}"></script>
+    <script src="{{ asset('public/js/app.js')}}"></script>
 </body>
 </html>
